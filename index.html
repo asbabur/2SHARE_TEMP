@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Lesson A1+ · The Bear and the Bee</title>
+<style>
+  :root{
+    --deep:#3a4a1e; --moss:#617a34; --sage:#93ab6c;
+    --cream:#fbf9f0; --amber:#c98a12; --honey:#f2c14e;
+    --brown:#6b4f2a; --shadow:0 6px 18px rgba(58,74,30,.13);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    color:#2f3a1c; line-height:1.6;
+    background:
+      radial-gradient(circle at 10% 6%, #f7ecc9 0%, transparent 45%),
+      radial-gradient(circle at 90% 4%, #e2ecc8 0%, transparent 42%),
+      linear-gradient(160deg,#fbf9f0 0%,#eef3e0 48%,#e3ebd1 100%);
+    background-attachment:fixed;
+  }
+  header{
+    background:linear-gradient(135deg,var(--deep) 0%,var(--moss) 55%,var(--sage) 100%);
+    color:#fdfbf2; padding:36px 18px 0; text-align:center;
+    box-shadow:var(--shadow); border-bottom:6px solid var(--honey);
+  }
+  header h1{margin:0 0 8px;font-size:clamp(1.35rem,3.4vw,2.1rem);}
+  header p{margin:6px auto;max-width:720px;opacity:.95;font-size:1rem;}
+  .btn-video{
+    display:inline-block;margin-top:16px;background:var(--amber);color:#fff;
+    text-decoration:none;font-weight:700;padding:11px 24px;border-radius:99px;
+    box-shadow:0 4px 12px rgba(201,138,18,.4);transition:.2s;
+  }
+  .btn-video:hover{transform:translateY(-2px);background:#a86f08;}
+
+  .tabs{display:flex;justify-content:center;gap:8px;padding:22px 16px 0;flex-wrap:wrap;}
+  .tab-btn{
+    background:rgba(255,255,255,.2); color:#fdfbf2;
+    border:2px solid rgba(255,255,255,.35);
+    padding:11px 24px; border-radius:14px 14px 0 0;
+    font-size:.96rem; font-weight:700; cursor:pointer;
+    transition:.2s; font-family:inherit;
+  }
+  .tab-btn:hover{background:rgba(255,255,255,.32);}
+  .tab-btn.active{
+    background:var(--cream); color:var(--deep);
+    border-color:var(--honey); border-bottom-color:var(--cream);
+  }
+  .tab-content{display:none;}
+  .tab-content.active{display:block; animation:tabFade .35s ease;}
+  @keyframes tabFade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  .hero-wrap{
+    background:#cfe6f5; border-bottom:4px solid var(--honey);
+    overflow:hidden; position:relative;
+  }
+  .hero-svg{display:block;width:100%;height:auto;max-height:380px;}
+  .hero-caption{
+    text-align:center;font-size:.85rem;color:#5e6b46;font-style:italic;
+    padding:8px 12px;background:rgba(255,255,255,.6);
+  }
+
+  main{max-width:1000px;margin:0 auto;padding:26px 16px 70px;}
+  section{
+    background:rgba(255,255,255,.85);
+    border:1px solid #d8e2c2; border-left:7px solid var(--moss);
+    border-radius:16px; padding:22px 20px 26px; margin:0 0 26px;
+    box-shadow:var(--shadow);
+  }
+  section h2{
+    margin:0 0 6px; color:var(--deep); font-size:1.25rem;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  }
+  section h2 .num{
+    background:var(--moss); color:#fff; width:30px; height:30px;
+    border-radius:50%; display:inline-flex; align-items:center;
+    justify-content:center; font-size:.95rem; flex:0 0 auto;
+  }
+  .sub{color:#5e6b46;font-size:.93rem;margin:0 0 18px;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+  .card{
+    background:var(--cream);border:1px solid #dde6c9;border-top:4px solid var(--sage);
+    border-radius:13px;padding:14px 15px;transition:.2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(58,74,30,.15);border-top-color:var(--honey);}
+
+  .flash-intro{
+    background:#fff8e8;border:1px solid #f1dcae;border-radius:12px;
+    padding:12px 16px;font-size:.88rem;color:#7a5a13;margin-bottom:18px;
+  }
+  .flash-intro b{color:#8a5c00;}
+  .flash-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:16px;
+  }
+  .flash-card{perspective:1000px;height:230px;cursor:pointer;}
+  .flash-card-inner{
+    position:relative;width:100%;height:100%;
+    transition:transform .55s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d;
+  }
+  .flash-card.flipped .flash-card-inner{transform:rotateY(180deg);}
+  .flash-face{
+    position:absolute;inset:0;backface-visibility:hidden;
+    border-radius:14px;padding:14px 15px;display:flex;
+    flex-direction:column;justify-content:center;
+    box-shadow:0 4px 14px rgba(58,74,30,.15);
+    border:2px solid var(--sage);
+  }
+  .flash-front{background:linear-gradient(135deg,#f8fbf0,#eef3e1);}
+  .flash-back{
+    background:linear-gradient(135deg,#fdf6e3,#f9edc8);
+    transform:rotateY(180deg);border-color:var(--honey);
+  }
+  .flash-face .f-emoji{font-size:1.6rem;margin-bottom:4px;}
+  .flash-face .f-word{font-weight:800;color:var(--deep);font-size:1.15rem;line-height:1.2;margin-bottom:4px;}
+  .flash-face .f-ipa{font-family:"Courier New",monospace;font-size:.78rem;color:var(--moss);margin-bottom:6px;}
+  .flash-face .f-hint{font-size:.74rem;color:#889478;font-style:italic;margin-top:auto;letter-spacing:.2px;}
+  .flash-face .f-ru{font-weight:700;color:var(--brown);font-size:.95rem;margin-bottom:6px;}
+  .flash-face .f-ex{font-size:.82rem;color:#4c5836;line-height:1.35;margin-bottom:5px;}
+  .flash-face .f-ex b{color:var(--deep);}
+  .flash-actions{display:flex;gap:6px;justify-content:center;margin-top:8px;pointer-events:auto;}
+  .flash-btn{
+    border:none;cursor:pointer;border-radius:99px;
+    padding:5px 14px;font-size:.8rem;font-weight:700;transition:.18s;font-family:inherit;
+  }
+  .flash-btn.known{background:#d8ead0;color:#2d5210;border:2px solid transparent;}
+  .flash-btn.known:hover{background:#bfe0b0;}
+  .flash-btn.unknown{background:#f6e0d0;color:#7a3d12;border:2px solid transparent;}
+  .flash-btn.unknown:hover{background:#efc8b0;}
+  .flash-btn.known.selected{background:#5f9a3c;color:#fff;border-color:#3d6b1f;}
+  .flash-btn.unknown.selected{background:#c96a3c;color:#fff;border-color:#8a3e18;}
+  .flash-card.known .flash-front{border-color:#5f9a3c;}
+  .flash-card.known .flash-front::after{content:"✅";position:absolute;top:8px;right:10px;font-size:1.1rem;}
+  .flash-card.unknown .flash-front{border-color:#c96a3c;}
+  .flash-card.unknown .flash-front::after{content:"❌";position:absolute;top:8px;right:10px;font-size:1.1rem;}
+  .flash-card .say-btn{
+    background:var(--moss);color:#fff;border:none;cursor:pointer;
+    width:32px;height:32px;border-radius:50%;font-size:.9rem;
+    box-shadow:0 3px 8px rgba(97,122,52,.35);transition:.18s;align-self:flex-start;
+  }
+  .flash-card .say-btn:hover{background:var(--amber);transform:scale(1.1);}
+  .flash-card .say-btn.speaking{background:var(--amber);animation:pulse .9s infinite;}
+  @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.16);}}
+  .flash-card.speaking .flash-front{border-color:var(--amber);}
+  .flash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+  .flash-summary{
+    background:#eef3e1;border-radius:10px;padding:10px 14px;
+    font-size:.88rem;color:var(--deep);margin-bottom:16px;
+    display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .flash-summary span{font-weight:700;}
+  .flash-summary .cnt-known{color:#3d6b1f;}
+  .flash-summary .cnt-unknown{color:#a34a12;}
+
+  .hint-box{
+    background:#f0f7e8;border-left:4px solid var(--sage);
+    border-radius:9px;padding:11px 14px;margin:10px 0;
+    font-size:.89rem;color:#4f5c37;
+  }
+  .hint-box b{color:var(--deep);}
+  .hint-box .hint-title{font-weight:700;color:var(--deep);margin-bottom:4px;font-size:.9rem;}
+
+  .answer-block{
+    background:var(--cream);border:1px solid #dde6c9;
+    border-radius:13px;padding:14px 16px;margin-bottom:14px;
+    border-left:4px solid var(--moss);
+  }
+  .answer-q{
+    font-weight:700;color:var(--deep);font-size:1rem;margin-bottom:8px;
+    display:flex;gap:9px;align-items:flex-start;
+  }
+  .answer-q .qnum{
+    background:var(--amber);color:#fff;border-radius:8px;
+    font-size:.78rem;padding:2px 9px;flex:0 0 auto;margin-top:2px;
+  }
+  .answer-area{
+    width:100%;min-height:70px;resize:vertical;
+    border:2px solid #cfdbb4;border-radius:10px;
+    padding:10px 13px;font-size:.92rem;font-family:inherit;
+    color:var(--deep);background:#fff;transition:.18s;
+  }
+  .answer-area:focus{outline:none;border-color:var(--moss);background:#fefefb;}
+  .answer-controls{display:flex;gap:9px;margin-top:9px;flex-wrap:wrap;align-items:center;}
+  .answer-saved-badge{
+    display:none;background:#d8ead0;color:#2d5210;
+    padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;
+  }
+  .answer-saved-badge.show{display:inline-block;animation:fade .35s ease;}
+
+  .btn-action{
+    border:none;cursor:pointer;border-radius:9px;padding:9px 20px;
+    font-size:.88rem;font-weight:700;transition:.18s;font-family:inherit;
+    background:var(--moss);color:#fff;box-shadow:0 3px 8px rgba(97,122,52,.3);
+  }
+  .btn-action:hover{background:var(--deep);transform:translateY(-1px);}
+  .btn-action.alt{background:var(--amber);}
+  .btn-action.alt:hover{background:#a86f08;}
+  .btn-action.ghost{background:#e3eccf;color:var(--deep);box-shadow:none;}
+  .btn-action.ghost:hover{background:#d4e1b8;}
+
+  .grammar-friend{
+    background:linear-gradient(135deg,#fff8e8,#fdf0d0);
+    border:2px dashed var(--amber);border-radius:16px;
+    padding:18px 20px;margin-bottom:20px;position:relative;
+  }
+  .grammar-friend .mascot{
+    position:absolute;top:-18px;left:20px;background:#fff;
+    border:2px solid var(--amber);border-radius:99px;
+    padding:3px 14px;font-size:.85rem;font-weight:700;color:#8a5c00;
+  }
+  .grammar-friend h3{margin:6px 0 10px;color:var(--deep);font-size:1.08rem;}
+  .grammar-friend p{margin:6px 0;font-size:.94rem;color:#4f5c37;}
+  .grammar-friend .big-rule{
+    font-family:"Courier New",monospace;font-weight:700;
+    background:#fff;display:inline-block;padding:8px 15px;
+    border-radius:10px;margin:6px 4px;font-size:1rem;
+    color:#3f5220;border:2px solid var(--moss);
+  }
+  .grammar-friend .big-rule .hl{color:#c96a3c;}
+  .grammar-table-mini{
+    width:100%;border-collapse:collapse;margin:10px 0;
+    background:#fff;border-radius:10px;overflow:hidden;font-size:.88rem;
+  }
+  .grammar-table-mini th{
+    background:var(--moss);color:#fff;padding:7px 10px;text-align:left;font-size:.82rem;
+  }
+  .grammar-table-mini td{padding:7px 10px;border-bottom:1px solid #edf1e1;}
+  .grammar-table-mini tr:last-child td{border-bottom:none;}
+  .grammar-table-mini tr:nth-child(even) td{background:#f8faf1;}
+
+  .try-block{
+    background:var(--cream);border:1px solid #dde6c9;
+    border-radius:13px;padding:16px 18px;margin-bottom:14px;
+  }
+  .try-block h4{margin:0 0 10px;font-size:.98rem;color:var(--deep);}
+  .try-options{display:flex;gap:8px;flex-wrap:wrap;}
+  .try-options button{
+    border:2px solid #cfdbb4;background:#fff;cursor:pointer;
+    border-radius:9px;padding:8px 16px;font-size:.9rem;
+    font-weight:700;color:var(--deep);transition:.18s;font-family:inherit;
+  }
+  .try-options button:hover{border-color:var(--moss);background:#eef3e1;}
+  .try-options button.ok{background:#d8ead0;border-color:#5f9a3c;color:#2d5210;}
+  .try-options button.no{background:#f6d8cc;border-color:#c96a3c;color:#7a2e10;}
+  .try-feedback{
+    margin-top:8px;font-size:.85rem;padding:8px 12px;border-radius:8px;
+    display:none;line-height:1.4;
+  }
+  .try-feedback.show{display:block;animation:fade .3s ease;}
+  .try-feedback.ok{background:#e6f4dc;color:#2d5210;border-left:3px solid #5f9a3c;}
+  .try-feedback.no{background:#fbe7dd;color:#7a2e10;border-left:3px solid #c96a3c;}
+  .try-feedback b{color:var(--deep);}
+
+  .drag-row{
+    display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;
+    min-height:44px;padding:8px;background:#f4f7ea;border-radius:10px;
+  }
+  .drag-chip{
+    background:var(--honey);color:var(--deep);border:none;cursor:grab;
+    padding:7px 14px;border-radius:99px;font-weight:700;font-size:.85rem;
+    transition:.18s;font-family:inherit;box-shadow:0 2px 5px rgba(201,138,18,.3);
+  }
+  .drag-chip:hover{transform:translateY(-2px);}
+  .drag-chip.dragging{opacity:.4;}
+  .drag-drop-zones{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px;}
+  .drag-zone{
+    background:#fff;border:2px dashed var(--sage);border-radius:12px;
+    padding:12px;min-height:80px;transition:.18s;
+  }
+  .drag-zone.hover{border-color:var(--moss);background:#eef3e1;}
+  .drag-zone h5{margin:0 0 8px;font-size:.85rem;color:var(--deep);text-align:center;}
+  .drag-zone .zone-items{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;min-height:30px;}
+  .zone-items .placed{
+    background:#e3eccf;color:var(--deep);padding:5px 12px;
+    border-radius:99px;font-weight:700;font-size:.82rem;
+  }
+
+  .comic-wrap{
+    background:#fff;border:3px solid var(--amber);border-radius:16px;
+    padding:16px;margin-top:20px;box-shadow:0 8px 24px rgba(58,74,30,.15);
+  }
+  .comic-title{
+    text-align:center;font-size:1.05rem;font-weight:800;color:var(--deep);
+    margin-bottom:14px;
+  }
+  .comic-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  @media(max-width:600px){.comic-strip{grid-template-columns:repeat(2,1fr);}}
+  .comic-frame{
+    background:#f8fbf0;border:2px solid var(--deep);border-radius:10px;
+    overflow:hidden;position:relative;min-height:140px;
+    display:flex;flex-direction:column;
+  }
+  .comic-frame .cf-ill{
+    flex:1;display:flex;align-items:center;justify-content:center;padding:8px;
+  }
+  .comic-frame .cf-ill svg{max-width:100%;height:auto;max-height:100px;}
+  .comic-frame .cf-caption{
+    background:#fffbe8;border-top:1.5px solid var(--deep);
+    padding:6px 8px;font-size:.76rem;color:var(--deep);
+    line-height:1.35;min-height:40px;
+  }
+  .comic-frame .cf-num{
+    position:absolute;top:4px;left:6px;
+    background:var(--deep);color:#fff;
+    width:18px;height:18px;border-radius:50%;
+    font-size:.65rem;display:flex;align-items:center;justify-content:center;font-weight:700;
+  }
+
+  .q{
+    background:var(--cream);border:1px solid #dfe7cc;border-radius:12px;
+    padding:14px 16px;margin-bottom:12px;
+  }
+  .q .qt{font-weight:700;color:var(--deep);font-size:1rem;display:flex;gap:9px;align-items:flex-start;}
+  .q .qn{
+    background:var(--amber);color:#fff;border-radius:8px;font-size:.78rem;
+    padding:2px 9px;flex:0 0 auto;margin-top:2px;
+  }
+  .q .hintline{font-size:.87rem;color:#6a7550;margin:8px 0 0 0;font-style:italic;}
+  .ans{
+    display:none;margin-top:10px;background:#ecf4db;border-left:4px solid var(--moss);
+    border-radius:9px;padding:10px 13px;font-size:.94rem;color:#33421b;
+  }
+  .ans.show{display:block;animation:fade .3s ease;}
+  .ans .en{font-weight:700;color:var(--deep);}
+  .q .row{display:flex;gap:9px;margin-top:11px;flex-wrap:wrap;}
+
+  button.reveal{background:var(--moss);color:#fff;}
+  button.reveal:hover{background:var(--deep);}
+  button.listen{background:#e3eccf;color:var(--deep);border:1px solid var(--sage);}
+  button.listen:hover{background:#d4e1b8;}
+  button.reveal,button.listen{
+    border:none;cursor:pointer;border-radius:9px;padding:7px 14px;
+    font-size:.84rem;font-weight:600;transition:.18s;
+  }
+  button.listen{border:1px solid var(--sage);}
+
+  .tf{
+    background:var(--cream);border:1px solid #dfe7cc;border-radius:12px;
+    padding:12px 15px;margin-bottom:10px;font-size:.96rem;
+  }
+  .tf .tfq{margin-bottom:9px;color:var(--deep);}
+  .tf button{
+    border:none;cursor:pointer;border-radius:9px;padding:6px 13px;
+    font-size:.84rem;font-weight:700;margin-right:7px;transition:.18s;
+  }
+  .btn-true{background:#d8ead0;color:#33501f;}
+  .btn-true:hover{background:#c2dfb6;}
+  .btn-false{background:#f6e0d0;color:#7a3d12;}
+  .btn-false:hover{background:#efd0b8;}
+  .tf .res{display:none;margin-top:9px;font-size:.88rem;font-weight:700;}
+  .tf .res.ok{display:block;color:#3d6b1f;}
+  .tf .res.no{display:block;color:#a34a12;}
+
+  .story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:8px;}
+  .story-card-wrap{perspective:1200px;min-height:280px;cursor:pointer;}
+  .story-card-inner{
+    position:relative;width:100%;height:100%;min-height:280px;
+    transition:transform .55s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d;
+  }
+  .story-card-wrap.flipped .story-card-inner{transform:rotateY(180deg);}
+  .story-face{
+    position:absolute;inset:0;backface-visibility:hidden;
+    background:#f4f7ea;border-radius:14px;padding:14px 14px 16px;
+    border-top:4px solid var(--honey);text-align:center;
+    display:flex;flex-direction:column;align-items:center;
+    box-shadow:0 4px 12px rgba(58,74,30,.12);transition:.2s;
+  }
+  .story-face:hover{border-top-color:var(--moss);}
+  .story-back{
+    background:linear-gradient(135deg,#fdf6e3,#f9edc8);
+    transform:rotateY(180deg);border-top-color:var(--moss);justify-content:center;
+  }
+  .story-face svg{
+    width:90px;height:90px;display:block;margin:0 auto 8px;
+    filter:drop-shadow(0 3px 4px rgba(58,74,30,.12));
+  }
+  .story-face .step-num{
+    display:inline-block;background:var(--amber);color:#fff;
+    width:24px;height:24px;border-radius:50%;
+    font-size:.82rem;line-height:24px;font-weight:700;margin-bottom:6px;
+  }
+  .story-face b{display:block;color:var(--deep);font-size:.92rem;margin-bottom:4px;}
+  .story-face span{font-size:.82rem;color:#5e6b46;line-height:1.4;}
+  .story-face .flip-hint{font-size:.72rem;color:#889478;font-style:italic;margin-top:auto;padding-top:6px;}
+  .story-back .b-title{font-weight:800;color:var(--deep);font-size:.95rem;margin-bottom:6px;line-height:1.25;}
+  .story-back .b-ru{font-weight:700;color:var(--brown);font-size:.9rem;margin-bottom:10px;line-height:1.35;}
+  .story-back .b-say{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;}
+  .story-back .b-say button{
+    background:var(--moss);color:#fff;border:none;cursor:pointer;
+    border-radius:99px;padding:6px 13px;font-size:.78rem;
+    font-weight:700;transition:.18s;font-family:inherit;
+  }
+  .story-back .b-say button:hover{background:var(--amber);transform:scale(1.04);}
+  .story-back .b-back-hint{font-size:.72rem;color:#889478;font-style:italic;margin-top:6px;}
+
+  footer{text-align:center;color:#77835c;font-size:.85rem;padding:10px 16px 40px;}
+  .audio-note{
+    background:#fff8e8;border:1px solid #f1dcae;border-radius:11px;
+    padding:10px 14px;font-size:.87rem;color:#7a5a13;margin-bottom:20px;
+  }
+
+  .saved-toast{
+    position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+    background:var(--deep);color:#fff;padding:12px 24px;border-radius:99px;
+    font-size:.9rem;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.25);
+    z-index:999;transition:transform .35s ease;pointer-events:none;
+  }
+  .saved-toast.show{transform:translateX(-50%) translateY(0);}
+
+  /* ===== BEE GAME ===== */
+  .bee-game-wrap{
+    background:linear-gradient(180deg,#cfe8f8 0%,#a8d4a0 70%,#7da352 100%);
+    border-radius:16px;position:relative;overflow:hidden;
+    height:460px;border:3px solid var(--deep);
+    box-shadow:inset 0 0 40px rgba(58,74,30,.2);
+  }
+  .bee-game-info{
+    position:absolute;top:10px;left:10px;z-index:10;
+    background:rgba(255,255,255,.92);border-radius:10px;
+    padding:8px 14px;font-size:.85rem;font-weight:700;color:var(--deep);
+    display:flex;gap:14px;flex-wrap:wrap;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+  }
+  .bee-game-target{
+    position:absolute;top:10px;left:50%;transform:translateX(-50%);
+    z-index:10;background:#fff;border:3px solid var(--amber);
+    border-radius:99px;padding:8px 24px;font-size:1.05rem;
+    font-weight:800;color:var(--deep);white-space:nowrap;
+    box-shadow:0 4px 12px rgba(201,138,18,.35);
+  }
+  .bee-game-target .en{color:var(--moss);}
+  .bee-game-target .ru{color:var(--brown);font-size:.85rem;display:block;font-weight:600;}
+  .bee-game-start{
+    position:absolute;inset:0;z-index:20;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.94);text-align:center;padding:20px;gap:12px;
+  }
+  .bee-game-start h3{margin:0;color:var(--deep);font-size:1.2rem;}
+  .bee-game-start p{margin:0;color:#5e6b46;font-size:.92rem;max-width:420px;}
+  .bee-body{
+    position:absolute;cursor:pointer;z-index:5;
+    transition:transform .1s;
+    filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));
+  }
+  .bee-body:hover{transform:scale(1.15);}
+  .bee-body.pop{animation:beePop .35s ease forwards;pointer-events:none;}
+  @keyframes beePop{
+    0%{transform:scale(1);opacity:1;}
+    50%{transform:scale(1.6);opacity:.7;}
+    100%{transform:scale(0);opacity:0;}
+  }
+  .bee-feedback{
+    position:absolute;z-index:15;font-weight:800;font-size:1rem;
+    pointer-events:none;animation:floatUp 1.1s ease forwards;
+    text-shadow:0 2px 4px rgba(0,0,0,.3);
+  }
+  @keyframes floatUp{
+    0%{opacity:1;transform:translateY(0);}
+    100%{opacity:0;transform:translateY(-60px);}
+  }
+  .bear-sprite{
+    position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+    z-index:4;transition:.2s;
+  }
+  .bear-sprite.hit{animation:bearHit .4s ease;}
+  @keyframes bearHit{
+    0%,100%{transform:translateX(-50%) rotate(0);}
+    25%{transform:translateX(-50%) rotate(-8deg);}
+    75%{transform:translateX(-50%) rotate(8deg);}
+  }
+  .bear-sprite.dead{opacity:.4;filter:grayscale(1);}
+  .bee-flash{
+    position:absolute;inset:0;background:#ff3030;opacity:0;
+    pointer-events:none;z-index:8;transition:opacity .15s;
+  }
+  .bee-flash.hit{opacity:.35;}
+  .bee-game-done{
+    position:absolute;inset:0;z-index:25;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.95);text-align:center;padding:20px;gap:12px;
+  }
+  .bee-game-done h3{margin:0;font-size:1.3rem;color:var(--deep);}
+  .bee-game-done .big-score{font-size:2.4rem;font-weight:800;color:var(--amber);}
+  .bee-game-done p{margin:0;color:#5e6b46;max-width:420px;}
+
+  /* ===== MEMORY ===== */
+  .memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:520px;}
+  @media(max-width:600px){.memory-grid{grid-template-columns:repeat(4,1fr);max-width:100%;}}
+  .memory-tile{
+    aspect-ratio:1;border-radius:11px;border:none;cursor:pointer;
+    background:linear-gradient(135deg,var(--moss),var(--sage));
+    color:#fff;font-size:.75rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    transition:.25s;padding:4px;text-align:center;line-height:1.2;
+    box-shadow:0 3px 8px rgba(58,74,30,.2);font-family:inherit;
+    word-break:break-word;
+  }
+  .memory-tile:hover{transform:scale(1.05);}
+  .memory-tile.flipped{background:var(--cream);color:var(--deep);border:2px solid var(--amber);font-size:.78rem;}
+  .memory-tile.matched{background:#d8ead0;color:#2d5210;border:2px solid #5f9a3c;cursor:default;opacity:.9;}
+  .memory-tile.matched:hover{transform:none;}
+  .memory-tile.matched-ru{background:#f8edc8;color:#6b4f2a;border:2px solid var(--amber);cursor:default;opacity:.9;}
+  .memory-tile.matched-ru:hover{transform:none;}
+
+  .result-bar{
+    margin-top:12px;background:#eef3e1;border-radius:99px;overflow:hidden;
+    height:22px;position:relative;
+  }
+  .result-fill{
+    height:100%;width:0;transition:width .5s ease;
+    background:linear-gradient(90deg,var(--sage),var(--moss));
+    display:flex;align-items:center;justify-content:flex-end;
+    padding-right:10px;color:#fff;font-size:.76rem;font-weight:700;
+  }
+  .timer-note{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#fff;border:1px solid #cfdbb4;border-radius:99px;
+    padding:4px 13px;font-size:.8rem;color:#5e6b46;margin-left:auto;
+    font-weight:600;
+  }
+  .timer-note.finished{background:#d8ead0;color:#2d5210;border-color:#5f9a3c;}
+  .btn-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px;}
+
+  .game-card{
+    background:var(--cream);border:1px solid #dde6c9;
+    border-radius:15px;padding:20px;margin-bottom:22px;
+    box-shadow:0 4px 12px rgba(58,74,30,.09);border-left:6px solid var(--amber);
+  }
+  .game-card h3{
+    margin:0 0 4px;font-size:1.08rem;color:var(--deep);
+    display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  }
+  .game-card h3 .game-num{
+    background:var(--moss);color:#fff;width:28px;height:28px;
+    border-radius:50%;display:inline-flex;align-items:center;
+    justify-content:center;font-size:.85rem;flex:0 0 auto;
+  }
+  .game-desc{font-size:.89rem;color:#5e6b46;margin:0 0 14px;}
+
+  .quiz-row{background:#f4f7ea;border-radius:10px;padding:11px 14px;margin-bottom:9px;}
+  .quiz-q{font-size:.93rem;color:var(--deep);margin-bottom:7px;font-weight:600;}
+  .quiz-opts{display:flex;gap:7px;flex-wrap:wrap;}
+  .quiz-opts button{
+    border:2px solid #cfdbb4;background:#fff;cursor:pointer;
+    border-radius:9px;padding:6px 15px;font-size:.87rem;
+    font-weight:600;color:var(--deep);transition:.18s;font-family:inherit;
+  }
+  .quiz-opts button:hover{border-color:var(--moss);background:#eef3e1;}
+  .quiz-opts button.correct{background:#d8ead0;border-color:#5f9a3c;color:#2d5210;}
+  .quiz-opts button.wrong{background:#f6d8cc;border-color:#c96a3c;color:#7a2e10;}
+  .quiz-feedback{
+    margin-top:8px;font-size:.83rem;padding:7px 11px;border-radius:8px;
+    display:none;line-height:1.4;
+  }
+  .quiz-feedback.show{display:block;animation:fade .3s ease;}
+  .quiz-feedback.ok{background:#e6f4dc;color:#2d5210;border-left:3px solid #5f9a3c;}
+  .quiz-feedback.no{background:#fbe7dd;color:#7a2e10;border-left:3px solid #c96a3c;}
+
+  .fill-row{
+    display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+    background:#f4f7ea;border-radius:10px;padding:10px 14px;margin-bottom:6px;
+    font-size:.93rem;
+  }
+  .fill-ru-hint{
+    font-size:.78rem;color:var(--brown);font-style:italic;
+    background:#fff8e8;border-radius:6px;padding:2px 8px;
+    display:inline-block;margin-bottom:6px;
+  }
+  .fill-row input{
+    width:140px;padding:6px 10px;border:2px solid #cfdbb4;
+    border-radius:8px;font-size:.9rem;font-family:inherit;
+    color:var(--deep);font-weight:600;transition:.18s;
+  }
+  .fill-row input:focus{outline:none;border-color:var(--moss);background:#fff;}
+  .fill-row input.correct{border-color:#5f9a3c;background:#e6f4dc;}
+  .fill-row input.wrong{border-color:#c96a3c;background:#fbe7dd;}
+  .fill-row .mark{font-size:1.1rem;font-weight:700;}
+  .fill-row .mark.ok{color:#5f9a3c;}
+  .fill-row .mark.no{color:#c96a3c;}
+  .fill-feedback{
+    font-size:.83rem;padding:7px 11px;border-radius:8px;margin-bottom:9px;
+    line-height:1.4;
+  }
+  .fill-feedback.ok{background:#e6f4dc;color:#2d5210;border-left:3px solid #5f9a3c;}
+  .fill-feedback.no{background:#fbe7dd;color:#7a2e10;border-left:3px solid #c96a3c;}
+
+  .build-row{background:#f4f7ea;border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+  .build-target{font-size:.87rem;color:#5e6b46;margin-bottom:8px;font-style:italic;}
+  .build-words{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px;}
+  .build-words button{
+    background:#fff;border:2px solid #cfdbb4;border-radius:8px;
+    padding:6px 13px;font-size:.87rem;font-weight:600;cursor:pointer;
+    color:var(--deep);transition:.18s;font-family:inherit;
+  }
+  .build-words button:hover{border-color:var(--moss);background:#eef3e1;}
+  .build-words button.used{opacity:.3;pointer-events:none;}
+  .build-answer{
+    min-height:36px;background:#fff;border:2px dashed var(--sage);
+    border-radius:9px;padding:7px 11px;font-size:.9rem;font-weight:600;
+    color:var(--deep);display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .build-answer span{background:#e3eccf;padding:3px 10px;border-radius:7px;}
+  .build-result{font-size:.86rem;font-weight:700;min-height:20px;}
+  .build-result.ok{color:#5f9a3c;}
+  .build-result.no{color:#c96a3c;}
+
+  .history-summary{
+    background:linear-gradient(135deg,#f0f7e8,#e3eccf);
+    border-radius:12px;padding:14px 18px;margin-bottom:14px;
+    display:flex;gap:20px;flex-wrap:wrap;align-items:center;
+  }
+  .history-summary .hs-item{
+    display:flex;flex-direction:column;font-size:.85rem;color:#5e6b46;
+  }
+  .history-summary .hs-item b{font-size:1.4rem;color:var(--deep);line-height:1.1;}
+  .history-progress{
+    background:#eef3e1;border-radius:99px;overflow:hidden;height:18px;
+    flex:1;min-width:180px;position:relative;
+  }
+  .history-progress-fill{
+    height:100%;background:linear-gradient(90deg,var(--sage),var(--moss));
+    transition:width .6s ease;
+  }
+  .history-empty{
+    text-align:center;color:#889478;font-size:.9rem;
+    padding:26px;font-style:italic;background:#f8faf1;border-radius:12px;
+  }
+  .history-list{display:flex;flex-direction:column;gap:8px;}
+  .history-item{
+    background:#f4f7ea;border-radius:10px;padding:10px 14px;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:10px;flex-wrap:wrap;font-size:.88rem;border-left:4px solid var(--sage);
+  }
+  .history-item .h-date{color:#7a8560;font-size:.8rem;white-space:nowrap;}
+  .history-item .h-game{font-weight:700;color:var(--deep);}
+  .history-item .h-score{
+    background:var(--moss);color:#fff;padding:2px 11px;
+    border-radius:99px;font-weight:700;font-size:.8rem;white-space:nowrap;
+  }
+  .history-item .h-score.partial{background:var(--amber);}
+  .history-item .h-score.low{background:#b5623c;}
+
+  @keyframes fade{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
+
+  @media(max-width:600px){
+    .tab-btn{padding:9px 14px;font-size:.82rem;}
+    .flash-grid{grid-template-columns:repeat(2,1fr);}
+    .flash-card{height:210px;}
+    .flash-face .f-word{font-size:1rem;}
+    .story-grid{grid-template-columns:repeat(2,1fr);}
+    .drag-drop-zones{grid-template-columns:1fr;}
+    .bee-game-wrap{height:400px;}
+    .memory-grid{grid-template-columns:repeat(4,1fr);max-width:100%;}
+    .memory-tile{font-size:.62rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🐻 The Bear and the Bee 🐝</h1>
+  <p>Смотрим историю, учимся пересказывать сюжет и практикуем грамматику.</p>
+  <a class="btn-video" href="https://vkvideo.ru/video-88353418_456248050" target="_blank" rel="noopener">▶ Смотреть мультфильм</a>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="lesson">📖 Lesson</button>
+    <button class="tab-btn" data-tab="grammar">📚 Grammar</button>
+    <button class="tab-btn" data-tab="practice">🎯 Practice</button>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- ==================== ВКЛАДКА 1: LESSON ====================== -->
+<!-- ============================================================ -->
+<div class="tab-content active" id="tab-lesson">
+
+<div class="hero-wrap">
+<svg class="hero-svg" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Медведь, пчела, улей и мёд">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#cfe6f5"/><stop offset="70%" stop-color="#e8f2dc"/><stop offset="100%" stop-color="#f7f3e0"/>
+  </linearGradient></defs>
+  <rect width="900" height="340" fill="url(#sky)"/>
+  <circle cx="790" cy="60" r="44" fill="#F9D56E" opacity="0.25"/>
+  <circle cx="790" cy="60" r="32" fill="#F9D56E"/>
+  <circle cx="790" cy="60" r="32" fill="#F9D56E" opacity="0.5"/>
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="140" cy="66" rx="50" ry="18"/><ellipse cx="180" cy="54" rx="38" ry="22"/><ellipse cx="100" cy="58" rx="32" ry="16"/>
+  </g>
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="450" cy="52" rx="40" ry="14"/><ellipse cx="485" cy="42" rx="30" ry="18"/><ellipse cx="415" cy="45" rx="25" ry="12"/>
+  </g>
+  <ellipse cx="150" cy="380" rx="350" ry="130" fill="#a8c47a"/>
+  <ellipse cx="780" cy="400" rx="380" ry="140" fill="#8fb262"/>
+  <rect y="275" width="900" height="70" fill="#7da352"/>
+  <path d="M0 280 Q100 270 200 280 T400 280 T600 280 T800 280 L900 280 L900 340 L0 340 Z" fill="#6f9a44"/>
+  <g><rect x="250" y="170" width="14" height="110" fill="#7a5230"/>
+    <circle cx="257" cy="160" r="34" fill="#5e8a3a"/><circle cx="230" cy="180" r="26" fill="#6f9a44"/><circle cx="285" cy="182" r="24" fill="#6f9a44"/></g>
+  <g><rect x="750" y="180" width="12" height="100" fill="#7a5230"/>
+    <circle cx="756" cy="170" r="30" fill="#5e8a3a"/><circle cx="730" cy="190" r="22" fill="#6f9a44"/><circle cx="782" cy="190" r="20" fill="#6f9a44"/></g>
+  <g><path d="M585 275 L590 150 Q595 140 600 140 L640 140 Q645 140 650 150 L655 275 Z" fill="#7a5230"/>
+    <path d="M600 145 L620 145 L620 275 L600 275 Z" fill="#8a6240" opacity="0.45"/>
+    <path d="M600 190 Q570 170 555 155" stroke="#7a5230" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M645 185 Q680 165 695 150" stroke="#7a5230" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <circle cx="620" cy="105" r="65" fill="#5e8a3a"/><circle cx="565" cy="135" r="48" fill="#6f9a44"/>
+    <circle cx="675" cy="135" r="48" fill="#6f9a44"/><circle cx="620" cy="68" r="46" fill="#7faa54"/>
+    <circle cx="580" cy="92" r="32" fill="#7faa54"/><circle cx="660" cy="92" r="32" fill="#7faa54"/>
+    <ellipse cx="620" cy="195" rx="38" ry="48" fill="#F2C14E"/>
+    <ellipse cx="620" cy="195" rx="38" ry="48" fill="none" stroke="#C98A12" stroke-width="2.5"/>
+    <path d="M587 176 Q620 167 653 176" stroke="#C98A12" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M585 190 Q620 181 655 190" stroke="#C98A12" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M587 207 Q620 198 653 207" stroke="#C98A12" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M590 223 Q620 214 650 223" stroke="#C98A12" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <ellipse cx="620" cy="210" rx="11" ry="9" fill="#5a3a1a"/></g>
+  <g transform="translate(200, 230)">
+    <ellipse cx="0" cy="62" rx="66" ry="9" fill="#000" opacity="0.12"/>
+    <ellipse cx="-33" cy="48" rx="21" ry="13" fill="#7a4a20"/><ellipse cx="33" cy="48" rx="21" ry="13" fill="#7a4a20"/>
+    <ellipse cx="0" cy="10" rx="52" ry="52" fill="#8B5A2B"/><ellipse cx="0" cy="19" rx="36" ry="40" fill="#a07048"/>
+    <path d="M40 -5 Q72 -38 90 -66" stroke="#8B5A2B" stroke-width="21" stroke-linecap="round" fill="none"/>
+    <circle cx="95" cy="-74" r="13" fill="#A0522D"/><circle cx="91" cy="-78" r="4" fill="#7a4a20"/>
+    <path d="M-40 -5 Q-52 14 -48 28" stroke="#8B5A2B" stroke-width="19" stroke-linecap="round" fill="none"/>
+    <circle cx="0" cy="-36" r="40" fill="#A0522D"/><circle cx="-30" cy="-66" r="14" fill="#A0522D"/>
+    <circle cx="30" cy="-66" r="14" fill="#A0522D"/><circle cx="-30" cy="-66" r="7.5" fill="#D2A679"/>
+    <circle cx="30" cy="-66" r="7.5" fill="#D2A679"/>
+    <ellipse cx="0" cy="-21" rx="21" ry="15" fill="#D2A679"/><ellipse cx="0" cy="-26" rx="7.5" ry="5.5" fill="#3E2723"/>
+    <ellipse cx="-2" cy="-28" rx="2" ry="1.5" fill="#fff" opacity="0.6"/>
+    <circle cx="-15" cy="-44" r="5" fill="#3E2723"/><circle cx="15" cy="-44" r="5" fill="#3E2723"/>
+    <circle cx="-14" cy="-45" r="1.8" fill="#fff"/><circle cx="16" cy="-45" r="1.8" fill="#fff"/>
+    <line x1="-24" y1="-53" x2="-9" y2="-49" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+    <line x1="24" y1="-53" x2="9" y2="-49" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-8 -11 Q0 -6 8 -11" fill="none" stroke="#3E2723" stroke-width="2.5" stroke-linecap="round"/></g>
+  <g transform="translate(510, 170)">
+    <ellipse cx="-8" cy="-14" rx="13" ry="8" fill="#E8F4FF" opacity="0.85" transform="rotate(-30 -8 -14)"/>
+    <ellipse cx="8" cy="-14" rx="13" ry="8" fill="#E8F4FF" opacity="0.85" transform="rotate(30 8 -14)"/>
+    <ellipse cx="0" cy="0" rx="16" ry="10" fill="#F2C14E"/>
+    <ellipse cx="0" cy="0" rx="16" ry="10" fill="none" stroke="#C98A12" stroke-width="1.5"/>
+    <path d="M-6 -9 Q-8 0 -6 9" stroke="#3E2723" stroke-width="3" fill="none"/>
+    <path d="M6 -9 Q8 0 6 9" stroke="#3E2723" stroke-width="3" fill="none"/>
+    <circle cx="-9" cy="-3" r="2.3" fill="#3E2723"/></g>
+  <g transform="translate(110, 278)">
+    <ellipse cx="0" cy="12" rx="22" ry="6" fill="#000" opacity="0.1"/>
+    <rect x="-20" y="-28" width="40" height="38" rx="5" fill="#E0A92E"/>
+    <rect x="-20" y="-28" width="40" height="38" rx="5" fill="none" stroke="#C98A12" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-28" rx="20" ry="7" fill="#F2C14E"/>
+    <ellipse cx="0" cy="10" rx="20" ry="6" fill="#C98A12"/>
+    <rect x="-15" y="-16" width="30" height="16" rx="3" fill="#fbf9f0"/>
+    <text x="0" y="-4" font-size="8" text-anchor="middle" font-weight="bold" fill="#6b4f2a" font-family="Arial">HONEY</text></g>
+</svg>
+<div class="hero-caption">🐻 Mr. Bear wants honey… but the bees are not happy! 🐝</div>
+</div>
+
+<main>
+
+  <div class="audio-note">
+    🔊 <b>Как слушать:</b> нажми на зелёную кнопку с динамиком — слово или предложение будет прочитано вслух. Слушай 2–3 раза и повторяй.
+  </div>
+
+  <!-- BEFORE YOU READ -->
+  <section>
+    <h2><span class="num">1</span> Before you read · Перед чтением</h2>
+    <p class="sub">Прочитай вопрос и подсказку. Напиши <b>полный ответ</b> по-английски и сохрани его.</p>
+
+    <div class="answer-block">
+      <div class="answer-q"><span class="qnum">1</span> Do you like honey? Why or why not?</div>
+      <div class="hint-box">
+        <div class="hint-title">💡 Подсказка</div>
+        Начни так: <b>Yes, I like honey because…</b> или <b>No, I don't like honey because…</b><br>
+        Полезные слова: <i>sweet</i> (сладкий), <i>tasty</i> (вкусный), <i>too sweet</i> (слишком сладкий).
+      </div>
+      <textarea class="answer-area" id="before-q1" placeholder="Yes, I like honey because…"></textarea>
+      <div class="answer-controls">
+        <button class="btn-action" onclick="saveAnswer('before-q1')">💾 Сохранить ответ</button>
+        <span class="answer-saved-badge" id="badge-before-q1">✅ Сохранено</span>
+      </div>
+    </div>
+
+    <div class="answer-block">
+      <div class="answer-q"><span class="qnum">2</span> Are you afraid of bees? Why or why not?</div>
+      <div class="hint-box">
+        <div class="hint-title">💡 Подсказка</div>
+        Начни так: <b>Yes, I am afraid of bees because…</b> или <b>No, I am not afraid of bees because…</b><br>
+        Полезные слова: <i>sting</i> (жалить), <i>small</i> (маленький), <i>fly</i> (летать), <i>buzz</i> (жужжать).
+      </div>
+      <textarea class="answer-area" id="before-q2" placeholder="No, I am not afraid of bees because…"></textarea>
+      <div class="answer-controls">
+        <button class="btn-action" onclick="saveAnswer('before-q2')">💾 Сохранить ответ</button>
+        <span class="answer-saved-badge" id="badge-before-q2">✅ Сохранено</span>
+      </div>
+    </div>
+
+    <div class="answer-block">
+      <div class="answer-q"><span class="qnum">3</span> What do you think the story is about?</div>
+      <div class="hint-box">
+        <div class="hint-title">💡 Подсказка</div>
+        Начни так: <b>I think the story is about…</b><br>
+        Полезные слова: <i>a bear</i>, <i>a bee</i>, <i>honey</i>, <i>anger</i> (гнев), <i>to be friends</i> (дружить).
+      </div>
+      <textarea class="answer-area" id="before-q3" placeholder="I think the story is about…"></textarea>
+      <div class="answer-controls">
+        <button class="btn-action" onclick="saveAnswer('before-q3')">💾 Сохранить ответ</button>
+        <span class="answer-saved-badge" id="badge-before-q3">✅ Сохранено</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLASH CARDS -->
+  <section>
+    <h2><span class="num">2</span> Flash cards · Флэш-карты</h2>
+    <p class="sub">Нажми на карточку — она перевернётся. Слушай слово, читай перевод и пример. Отмечай: ✅ знакомо / ❌ незнакомо.</p>
+    <div class="flash-intro">
+      <b>Как работать с карточками:</b><br>
+      1. Прочитай слово → нажми 🔊, повтори вслух.<br>
+      2. Нажми на карточку → проверь перевод и пример.<br>
+      3. Отметь: ✅ (я знаю) или ❌ (нужно повторить).
+    </div>
+    <div class="flash-summary">
+      <span>Всего слов: <span id="total-cnt">0</span></span>
+      <span class="cnt-known">✅ Знаю: <span id="known-cnt">0</span></span>
+      <span class="cnt-unknown">❌ Повторить: <span id="unknown-cnt">0</span></span>
+    </div>
+    <div class="flash-grid" id="flash-grid"></div>
+  </section>
+
+  <!-- TRUE OR FALSE -->
+  <section>
+    <h2><span class="num">3</span> True or False · Правда или ложь</h2>
+    <p class="sub">Прочитай предложение. Нажми <b>True</b> (правда) или <b>False</b> (ложь). При ошибке — объяснение.</p>
+    <div id="tf-container"></div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section>
+    <h2><span class="num">4</span> Questions · Вопросы по истории</h2>
+    <p class="sub">Напиши полный ответ по-английски и сохрани его. Потом можно проверить себя, нажав «Показать образец».</p>
+    <div id="questions-container"></div>
+  </section>
+
+  <!-- BEE STINGS -->
+  <section>
+    <h2><span class="num">5</span> 🐝 Bee Stings · Пчёлы и укусы</h2>
+    <p class="sub">Пчёлы летят к медведю! Найди пчелу с нужной частью тела и нажми на неё, пока она не укусила медведя. 3 укуса — и игра провалена!</p>
+
+    <div class="bee-game-wrap" id="bee-game">
+      <div class="bee-game-info">
+        <span>🎯 Очки: <span id="bee-score">0</span></span>
+        <span>🐝 Поймано: <span id="bee-caught">0</span> / 10</span>
+        <span>❤️ Жизни: <span id="bee-lives">3</span></span>
+      </div>
+      <div class="bee-game-target" id="bee-target" style="display:none;">
+        <span class="en">Head</span>
+        <span class="ru">Голова</span>
+      </div>
+      <div class="bear-sprite" id="bear-sprite">
+        <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="120" height="140">
+          <ellipse cx="60" cy="125" rx="45" ry="6" fill="#000" opacity="0.2"/>
+          <ellipse cx="30" cy="110" rx="14" ry="9" fill="#7a4a20"/>
+          <ellipse cx="90" cy="110" rx="14" ry="9" fill="#7a4a20"/>
+          <ellipse cx="60" cy="70" rx="38" ry="40" fill="#8B5A2B"/>
+          <ellipse cx="60" cy="78" rx="26" ry="30" fill="#a07048"/>
+          <path d="M28 70 Q12 78 10 92" stroke="#8B5A2B" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path d="M92 70 Q108 78 110 92" stroke="#8B5A2B" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <circle cx="60" cy="40" r="30" fill="#A0522D"/>
+          <circle cx="38" cy="18" r="10" fill="#A0522D"/>
+          <circle cx="82" cy="18" r="10" fill="#A0522D"/>
+          <circle cx="38" cy="18" r="5" fill="#D2A679"/>
+          <circle cx="82" cy="18" r="5" fill="#D2A679"/>
+          <ellipse cx="60" cy="48" rx="16" ry="11" fill="#D2A679"/>
+          <ellipse cx="60" cy="43" rx="6" ry="4.5" fill="#3E2723"/>
+          <circle cx="48" cy="34" r="4" fill="#3E2723"/>
+          <circle cx="72" cy="34" r="4" fill="#3E2723"/>
+          <circle cx="49" cy="33" r="1.2" fill="#fff"/>
+          <circle cx="73" cy="33" r="1.2" fill="#fff"/>
+          <path d="M52 56 Q60 60 68 56" fill="none" stroke="#3E2723" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="bee-game-start" id="bee-start">
+        <h3>🐝 Bee Stings!</h3>
+        <p>Вверху появляется слово — найди пчелу с этой частью тела и нажми на неё, пока пчела не укусила медведя!</p>
+        <p><b>Части тела:</b> head (голова), nose (нос), ear (ухо), arm (рука), leg (нога), hand (ладонь), eye (глаз), mouth (рот).</p>
+        <p><b>Правила:</b> 10 пойманных пчёл — победа. 3 укуса — провал.</p>
+        <button class="btn-action alt" onclick="startBeeGame()" style="font-size:1rem;padding:12px 30px;">▶ Начать игру</button>
+      </div>
+      <div class="bee-game-done" id="bee-done" style="display:none;">
+        <h3 id="bee-done-title">🎉 Игра окончена!</h3>
+        <div class="big-score" id="bee-final-score">0</div>
+        <p id="bee-final-text">Молодец!</p>
+        <button class="btn-action alt" onclick="startBeeGame()">🔄 Играть снова</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY MAP -->
+  <section>
+    <h2><span class="num">6</span> The story map · Карта истории</h2>
+    <p class="sub">Нажми на карточку — на обороте перевод и озвучка. Рассказывай историю по картинкам!</p>
+    <div class="story-grid" id="story-grid"></div>
+  </section>
+
+  <!-- TELL THE STORY -->
+  <section>
+    <h2><span class="num">7</span> Tell the story · Расскажи историю</h2>
+    <p class="sub">Используй начала предложений. Напиши полный рассказ по-английски, сохрани — и получишь комикс по своей истории!</p>
+    <div class="hint-box">
+      <div class="hint-title">💡 Начала предложений (выбери и продолжи)</div>
+      <b>1.</b> This is a story about… &nbsp;·&nbsp;
+      <b>2.</b> The bear likes… &nbsp;·&nbsp;
+      <b>3.</b> One day he goes to… &nbsp;·&nbsp;
+      <b>4.</b> He sees… &nbsp;·&nbsp;
+      <b>5.</b> The bee says… &nbsp;·&nbsp;
+      <b>6.</b> The bear is… &nbsp;·&nbsp;
+      <b>7.</b> The bee bites… &nbsp;·&nbsp;
+      <b>8.</b> The bear breaks… &nbsp;·&nbsp;
+      <b>9.</b> He runs home and… &nbsp;·&nbsp;
+      <b>10.</b> At the end, the honey is… <br>
+      <b>Соединяй слова:</b> and · but · because · then · at the end.
+    </div>
+
+    <div class="answer-block">
+      <div class="answer-q"><span class="qnum">✍</span> My story · Моя история</div>
+      <textarea class="answer-area" id="my-story" style="min-height:140px;" placeholder="This is a story about a bear. The bear likes honey…"></textarea>
+      <div class="answer-controls">
+        <button class="btn-action alt" onclick="submitStory()">📤 Отправить ответ</button>
+        <button class="btn-action" onclick="saveAnswer('my-story')">💾 Сохранить</button>
+        <span class="answer-saved-badge" id="badge-my-story">✅ Сохранено</span>
+      </div>
+    </div>
+
+    <div id="comic-container"></div>
+  </section>
+
+</main>
+</div><!-- /tab-lesson -->
+
+
+<!-- ============================================================ -->
+<!-- ==================== ВКЛАДКА 2: GRAMMAR ===================== -->
+<!-- ============================================================ -->
+<div class="tab-content" id="tab-grammar">
+<main>
+  <section>
+    <h2><span class="num">📚</span> Grammar for kids · Грамматика по-простому</h2>
+    <p class="sub">Здесь мы разберём <b>have / has</b> и <b>he / she / it likes</b> — понятно и с примерами.</p>
+
+    <div class="grammar-friend">
+      <div class="mascot">🐻 Mr. Bear объясняет</div>
+      <h3>Привет! Я — Mr. Bear. Давай разберёмся с двумя важными правилами.</h3>
+      <p>Когда мы говорим <b>о себе</b> или <b>о друзьях</b> — это одно правило.</p>
+      <p>Когда мы говорим <b>об одном человеке или животном</b> (он, она, оно) — правило меняется!</p>
+    </div>
+
+    <div class="grammar-friend">
+      <div class="mascot">🎯 Правило №1</div>
+      <h3>Глагол <i>like</i> — «любить, нравиться»</h3>
+      <p>Если <b>I / you / we / they</b> — просто <b>like</b>. Если <b>he / she / it</b> — <b>like</b>+<b>s</b>!</p>
+      <table class="grammar-table-mini">
+        <tr><th>Кто?</th><th>Слово</th><th>Пример</th></tr>
+        <tr><td>I (я)</td><td>like</td><td>I <b>like</b> honey.</td></tr>
+        <tr><td>you (ты)</td><td>like</td><td>You <b>like</b> honey.</td></tr>
+        <tr><td>we (мы)</td><td>like</td><td>We <b>like</b> honey.</td></tr>
+        <tr><td>they (они)</td><td>like</td><td>They <b>like</b> honey.</td></tr>
+        <tr><td><b>he (он)</b></td><td><b>likes</b></td><td>He <b>likes</b> honey.</td></tr>
+        <tr><td><b>she (она)</b></td><td><b>likes</b></td><td>She <b>likes</b> honey.</td></tr>
+        <tr><td><b>it (оно)</b></td><td><b>likes</b></td><td>The bear <b>likes</b> honey.</td></tr>
+      </table>
+      <span class="big-rule">he / she / it → глагол + <span class="hl">s</span></span>
+    </div>
+
+    <div class="grammar-friend">
+      <div class="mascot">🎯 Правило №2</div>
+      <h3>Глагол <i>have / has</i> — «иметь»</h3>
+      <table class="grammar-table-mini">
+        <tr><th>Кто?</th><th>Слово</th><th>Пример</th></tr>
+        <tr><td>I (я)</td><td>have</td><td>I <b>have</b> a stick.</td></tr>
+        <tr><td>you (ты)</td><td>have</td><td>You <b>have</b> a stick.</td></tr>
+        <tr><td>we (мы)</td><td>have</td><td>We <b>have</b> a stick.</td></tr>
+        <tr><td>they (они)</td><td>have</td><td>They <b>have</b> a stick.</td></tr>
+        <tr><td><b>he (он)</b></td><td><b>has</b></td><td>He <b>has</b> a stick.</td></tr>
+        <tr><td><b>she (она)</b></td><td><b>has</b></td><td>She <b>has</b> a stick.</td></tr>
+        <tr><td><b>it (оно)</b></td><td><b>has</b></td><td>The bear <b>has</b> a stick.</td></tr>
+      </table>
+      <span class="big-rule">he / she / it → <span class="hl">has</span></span>
+      <span class="big-rule">I / you / we / they → have</span>
+    </div>
+
+    <div class="grammar-friend">
+      <div class="mascot">🚫 Как сказать «НЕ»</div>
+      <h3>Отрицательные предложения — <i>don't / doesn't</i></h3>
+      <table class="grammar-table-mini">
+        <tr><th>Кто?</th><th>Слово</th><th>Пример</th></tr>
+        <tr><td>I / you / we / they</td><td><b>don't</b> + like/have</td><td>I <b>don't like</b> bees.</td></tr>
+        <tr><td>he / she / it</td><td><b>doesn't</b> + like/have</td><td>He <b>doesn't like</b> bees.</td></tr>
+        <tr><td>he / she / it</td><td><b>doesn't</b> + have</td><td>She <b>doesn't have</b> honey.</td></tr>
+      </table>
+      <p style="margin-top:12px;">⚠️ <b>Важно!</b> После <i>doesn't</i> глагол возвращается в начальную форму:</p>
+      <span class="big-rule">He doesn't like<span class="hl">s</span> ❌ → He doesn't <span class="hl">like</span> ✅</span>
+    </div>
+
+    <div class="grammar-friend">
+      <div class="mascot">❓ Как задать вопрос</div>
+      <h3>Вопросительные предложения — <i>Do / Does</i></h3>
+      <table class="grammar-table-mini">
+        <tr><th>Кто?</th><th>Слово</th><th>Пример</th></tr>
+        <tr><td>I / you / we / they</td><td><b>Do</b> …?</td><td><b>Do</b> you like honey?</td></tr>
+        <tr><td>he / she / it</td><td><b>Does</b> …?</td><td><b>Does</b> he have a stick?</td></tr>
+      </table>
+      <p style="margin-top:12px;">Ответы: <span class="big-rule">Yes, I do. / No, I don't.</span> · <span class="big-rule">Yes, he does. / No, he doesn't.</span></p>
+    </div>
+
+    <div class="grammar-friend" style="background:linear-gradient(135deg,#e8f5dc,#dcefcc);border-color:var(--moss);">
+      <div class="mascot" style="border-color:var(--moss);color:var(--moss);">🎮 Practice zone · Тренировка</div>
+      <h3>Проверь себя!</h3>
+
+      <h4 style="color:var(--deep);margin:14px 0 8px;">1. Выбери правильную форму</h4>
+      <div class="try-block">
+        <h4>She ___ honey.</h4>
+        <div class="try-options">
+          <button onclick="tryAnswer(this, 'like', false, 'После she нужна форма likes.')">like</button>
+          <button onclick="tryAnswer(this, 'likes', true, '')">likes</button>
+        </div>
+        <div class="try-feedback"></div>
+      </div>
+      <div class="try-block">
+        <h4>I ___ a big stick.</h4>
+        <div class="try-options">
+          <button onclick="tryAnswer(this, 'have', true, '')">have</button>
+          <button onclick="tryAnswer(this, 'has', false, 'После I нужна форма have, а не has.')">has</button>
+        </div>
+        <div class="try-feedback"></div>
+      </div>
+
+      <h4 style="color:var(--deep);margin:14px 0 8px;">2. Правда или ложь?</h4>
+      <div class="try-block" data-tf="true">
+        <h4>He likes honey. — это правильное предложение.</h4>
+        <div class="try-options">
+          <button onclick="tryTF(this, true)">True</button>
+          <button onclick="tryTF(this, false)">False</button>
+        </div>
+        <div class="try-feedback"></div>
+      </div>
+      <div class="try-block" data-tf="false">
+        <h4>She have a stick. — это правильное предложение.</h4>
+        <div class="try-options">
+          <button onclick="tryTF(this, true)">True</button>
+          <button onclick="tryTF(this, false)">False</button>
+        </div>
+        <div class="try-feedback"></div>
+      </div>
+    </div>
+
+    <div class="grammar-friend" style="background:#e8f0fb;border-color:#4a7fc1;">
+      <div class="mascot" style="border-color:#4a7fc1;color:#2c4a6e;">🕐 Какое это время?</div>
+      <h3>Present Simple — настоящее простое</h3>
+      <p>Все эти правила работают в <b>Present Simple</b> — когда что-то происходит <b>обычно, всегда или регулярно</b>.</p>
+      <p>✅ <i>The bear likes honey</i> — его привычка.<br>✅ <i>Bees have wings</i> — всегда так.<br>✅ <i>She has breakfast</i> — каждый день.</p>
+      <p style="margin-top:10px;">В прошлом (Past Simple): <i>The bear <b>liked</b> honey</i> · <i>He <b>had</b> honey</i>.</p>
+    </div>
+  </section>
+</main>
+</div><!-- /tab-grammar -->
+
+
+<!-- ============================================================ -->
+<!-- ==================== ВКЛАДКА 3: PRACTICE ==================== -->
+<!-- ============================================================ -->
+<div class="tab-content" id="tab-practice">
+<main>
+  <section>
+    <h2><span class="num">🎯</span> Practice · Практика</h2>
+    <p class="sub">Играй и проверяй себя. Когда ты нажимаешь «💾 Сохранить и остановить», таймер останавливается, а результат сразу появляется в разделе History ниже.</p>
+
+    <div class="game-card" id="game1">
+      <h3><span class="game-num">1</span> 🎯 Choose the right form</h3>
+      <p class="game-desc">Выбери правильный вариант. При ошибке — объяснение.</p>
+      <div id="quiz-container"></div>
+      <div class="btn-row">
+        <button class="btn-action" onclick="restartQuiz()">🔄 Заново</button>
+        <button class="btn-action alt" onclick="saveGame('game1')">💾 Сохранить и остановить</button>
+        <span class="timer-note" id="timer-game1">⏱ 00:00</span>
+      </div>
+      <div class="result-bar"><div class="result-fill" id="bar-game1">0 / 0</div></div>
+    </div>
+
+    <div class="game-card" id="game2">
+      <h3><span class="game-num">2</span> 🌍 Choose the translation</h3>
+      <p class="game-desc">Выбери правильный перевод слова. При ошибке — объяснение.</p>
+      <div id="trans-container"></div>
+      <div class="btn-row">
+        <button class="btn-action" onclick="restartTrans()">🔄 Заново</button>
+        <button class="btn-action alt" onclick="saveGame('game2')">💾 Сохранить и остановить</button>
+        <span class="timer-note" id="timer-game2">⏱ 00:00</span>
+      </div>
+      <div class="result-bar"><div class="result-fill" id="bar-game2">0 / 0</div></div>
+    </div>
+
+    <div class="game-card" id="game3">
+      <h3><span class="game-num">3</span> ✍️ Fill in the gap</h3>
+      <p class="game-desc">Впиши правильное слово. <b>Принимаются любые грамматически допустимые варианты</b> (например, <i>doesn't like</i>, <i>does not like</i>, <i>doesn’t like</i>). При ошибке — объяснение.</p>
+      <div id="fill-container"></div>
+      <div class="btn-row">
+        <button class="btn-action" onclick="checkAllFills()">✅ Проверить всё</button>
+        <button class="btn-action" onclick="restartFill()">🔄 Заново</button>
+        <button class="btn-action alt" onclick="saveGame('game3')">💾 Сохранить и остановить</button>
+        <span class="timer-note" id="timer-game3">⏱ 00:00</span>
+      </div>
+      <div class="result-bar"><div class="result-fill" id="bar-game3">0 / 0</div></div>
+    </div>
+
+    <div class="game-card" id="game4">
+      <h3><span class="game-num">4</span> 🃏 Memory pairs · Слово и перевод</h3>
+      <p class="game-desc">Найди пару: <b>английское слово</b> + <b>русский перевод</b>. Верные пары остаются открытыми.</p>
+      <div class="memory-grid" id="memory-grid"></div>
+      <div class="btn-row">
+        <button class="btn-action" onclick="restartMemory()">🔄 Заново</button>
+        <button class="btn-action alt" onclick="saveGame('game4')">💾 Сохранить и остановить</button>
+        <span class="timer-note" id="timer-game4">⏱ 00:00</span>
+      </div>
+      <div class="result-bar"><div class="result-fill" id="bar-game4">0 / 0</div></div>
+    </div>
+
+    <div class="game-card" id="game5">
+      <h3><span class="game-num">5</span> 🧩 Build a sentence</h3>
+      <p class="game-desc">Собери предложение из слов. При ошибке — подсказка.</p>
+      <div id="build-container"></div>
+      <div class="btn-row">
+        <button class="btn-action" onclick="restartBuild()">🔄 Заново</button>
+        <button class="btn-action alt" onclick="saveGame('game5')">💾 Сохранить и остановить</button>
+        <span class="timer-note" id="timer-game5">⏱ 00:00</span>
+      </div>
+      <div class="result-bar"><div class="result-fill" id="bar-game5">0 / 0</div></div>
+    </div>
+
+    <div class="game-card" id="game6">
+      <h3><span class="game-num">6</span> 👂 Listening</h3>
+      <p class="game-desc">Послушай предложение и выбери правильную форму.</p>
+      <div id="listen-container"></div>
+      <div class="btn-row">
+        <button class="btn-action" onclick="restartListen()">🔄 Заново</button>
+        <button class="btn-action alt" onclick="saveGame('game6')">💾 Сохранить и остановить</button>
+        <span class="timer-note" id="timer-game6">⏱ 00:00</span>
+      </div>
+      <div class="result-bar"><div class="result-fill" id="bar-game6">0 / 0</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">📜</span> History · История результатов</h2>
+    <p class="sub">Здесь сразу появляются твои сохранённые результаты. Так ты видишь свой прогресс.</p>
+    <div id="history-container"></div>
+    <div class="btn-row">
+      <button class="btn-action ghost" onclick="clearHistory()">🗑 Очистить историю</button>
+    </div>
+  </section>
+</main>
+</div><!-- /tab-practice -->
+
+<footer>
+  English Lesson · The Bear and the Bee 🐻🐝<br>
+  Нажми 🔊 — и повторяй вслух. Practice makes perfect!
+</footer>
+
+<div class="saved-toast" id="saved-toast">💾 Сохранено!</div>
+
+<script>
+/* ============================================================
+   ВКЛАДКИ
+   ============================================================ */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    // при переключении на Practice — перерисовать History
+    if(btn.dataset.tab === 'practice') renderHistory();
+  });
+});
+
+/* ============================================================
+   ОЗВУЧКА
+   ============================================================ */
+const synth = window.speechSynthesis;
+let voices = [];
+function loadVoices(){ if(synth) voices = synth.getVoices(); }
+loadVoices();
+if(synth && typeof synth.onvoiceschanged !== 'undefined') synth.onvoiceschanged = loadVoices;
+
+function pickVoice(){
+  if(!voices.length) voices = synth.getVoices();
+  return voices.find(v => /en-GB/i.test(v.lang) && /female|google|libby|sonia|hazel/i.test(v.name))
+      || voices.find(v => /en-GB/i.test(v.lang))
+      || voices.find(v => /^en-US/i.test(v.lang))
+      || voices.find(v => /^en/i.test(v.lang))
+      || null;
+}
+
+function speak(text, btn){
+  if(!synth) return;
+  synth.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-GB'; u.rate = 0.8; u.pitch = 1.05; u.volume = 1;
+  const v = pickVoice(); if(v) u.voice = v;
+  document.querySelectorAll('.say-btn.speaking, button.say.speaking, button.listen.speaking')
+    .forEach(b => b.classList.remove('speaking'));
+  if(btn){ btn.classList.add('speaking'); u.onend = () => btn.classList.remove('speaking'); u.onerror = () => btn.classList.remove('speaking'); }
+  synth.speak(u);
+}
+document.querySelectorAll('[data-say]').forEach(btn => {
+  btn.addEventListener('click', () => speak(btn.dataset.say, btn));
+});
+
+function speakBtn(text, btn, lang){
+  if(!synth) return;
+  synth.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang === 'ru' ? 'ru-RU' : 'en-GB';
+  u.rate = lang === 'ru' ? 0.9 : 0.8;
+  u.pitch = 1.05; u.volume = 1;
+  if(lang !== 'ru'){ const v = pickVoice(); if(v) u.voice = v; }
+  document.querySelectorAll('button.speaking').forEach(b => b.classList.remove('speaking'));
+  if(btn){ btn.classList.add('speaking'); u.onend = () => btn.classList.remove('speaking'); u.onerror = () => btn.classList.remove('speaking'); }
+  synth.speak(u);
+}
+
+/* ============================================================
+   ХРАНИЛИЩЕ
+   ============================================================ */
+const STORAGE_KEY = 'bear_bee_results_v4';
+const ANSWERS_KEY = 'bear_bee_answers_v4';
+const FLASH_KEY = 'bear_bee_flash_v4';
+
+function loadResults(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return [];
+    const arr = JSON.parse(raw);
+    return Array.isArray(arr) ? arr : [];
+  }catch(e){ console.error('loadResults error', e); return []; }
+}
+function saveResults(arr){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); return true; }
+  catch(e){
+    console.error('saveResults error', e);
+    alert('Не удалось сохранить: браузер блокирует localStorage.');
+    return false;
+  }
+}
+function loadAnswers(){ try{ return JSON.parse(localStorage.getItem(ANSWERS_KEY) || '{}'); } catch(e){ return {}; } }
+function saveAnswers(obj){ try{ localStorage.setItem(ANSWERS_KEY, JSON.stringify(obj)); } catch(e){} }
+function loadFlash(){ try{ return JSON.parse(localStorage.getItem(FLASH_KEY) || '{}'); } catch(e){ return {}; } }
+function saveFlash(obj){ try{ localStorage.setItem(FLASH_KEY, JSON.stringify(obj)); } catch(e){} }
+
+function formatDate(d){
+  const pad = n => String(n).padStart(2,'0');
+  return `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()} в ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+}
+
+let toastTimer = null;
+function showToast(msg){
+  const t = document.getElementById('saved-toast');
+  if(!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ============================================================
+   СОХРАНЕНИЕ ОТВЕТОВ
+   ============================================================ */
+function saveAnswer(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const answers = loadAnswers();
+  answers[id] = { text: el.value, date: new Date().toISOString() };
+  saveAnswers(answers);
+  const badge = document.getElementById('badge-' + id);
+  if(badge){ badge.classList.add('show'); }
+  showToast('✅ Ответ сохранён!');
+}
+window.saveAnswer = saveAnswer;
+
+function loadAllSavedAnswers(){
+  const answers = loadAnswers();
+  for(const id in answers){
+    const el = document.getElementById(id);
+    if(el){
+      el.value = answers[id].text || '';
+      const badge = document.getElementById('badge-' + id);
+      if(badge && answers[id].text){ badge.classList.add('show'); }
+    }
+  }
+}
+
+/* ============================================================
+   ФЛЭШ-КАРТЫ
+   ============================================================ */
+const FLASH_DATA = [
+  { emoji:'🐻', word:'a bear', ipa:'/ə beə/', ru:'медведь', ex:'The <b>bear</b> loves sweet honey.' },
+  { emoji:'🐝', word:'a bee', ipa:'/ə biː/', ru:'пчела', ex:'A <b>bee</b> is small but brave.' },
+  { emoji:'🍯', word:'honey', ipa:'/ˈhʌni/', ru:'мёд', ex:'The bear is looking for <b>honey</b>.' },
+  { emoji:'😡', word:'furious', ipa:'/ˈfjʊəriəs/', ru:'взбешённый, в ярости', ex:'The bear is <b>furious</b> with the bee.' },
+  { emoji:'😠', word:'annoyed', ipa:'/əˈnɔɪd/', ru:'раздражённый', ex:'He is <b>annoyed</b> because there is no honey.' },
+  { emoji:'🌳', word:'a hive', ipa:'/ə haɪv/', ru:'улей', ex:'The bees live in a <b>hive</b> in the tree.' },
+  { emoji:'🍃', word:'a forest', ipa:'/ə ˈfɒrɪst/', ru:'лес', ex:'The bear walks into the <b>forest</b>.' },
+  { emoji:'🌼', word:'a flower', ipa:'/ə ˈflaʊə/', ru:'цветок', ex:'The honey is behind the <b>flower</b>.' },
+  { emoji:'🥄', word:'a cupboard', ipa:'/ə ˈkʌbəd/', ru:'шкаф (для продуктов)', ex:'The honey is in the <b>cupboard</b>.' },
+  { emoji:'👃', word:'a nose', ipa:'/ə nəʊz/', ru:'нос', ex:'The bee stings his <b>nose</b>.' },
+  { emoji:'🪵', word:'a stick', ipa:'/ə stɪk/', ru:'палка', ex:'He picks up a big <b>stick</b>.' },
+  { emoji:'💔', word:'to break (broke)', ipa:'/tə breɪk · brəʊk/', ru:'ломать, разбивать', ex:'The bear <b>broke</b> the hive.' },
+  { emoji:'🏃', word:'to escape', ipa:'/tʊ ɪˈskeɪp/', ru:'убегать, спасаться', ex:'He tries to <b>escape</b> from the bees.' },
+  { emoji:'😭', word:'to cry', ipa:'/tə kraɪ/', ru:'плакать', ex:'The bear starts to <b>cry</b> at home.' },
+  { emoji:'💊', word:'medicine', ipa:'/ˈmedsn/', ru:'лекарство', ex:'His wife gives him some <b>medicine</b>.' },
+  { emoji:'🙏', word:'to apologize', ipa:'/tʊ əˈpɒlədʒaɪz/', ru:'извиняться', ex:'The bear should <b>apologize</b> to the bee.' },
+  { emoji:'🔥', word:'a temper', ipa:'/ə ˈtempə/', ru:'вспыльчивость, характер', ex:'A hot <b>temper</b> gets you into trouble.' },
+  { emoji:'😌', word:'calm', ipa:'/kɑːm/', ru:'спокойный', ex:'Try to stay <b>calm</b> and think first.' },
+  { emoji:'🛡️', word:'to protect', ipa:'/tə prəˈtekt/', ru:'защищать', ex:'The bees <b>protect</b> their hive.' },
+  { emoji:'🐝🐝🐝', word:'a swarm', ipa:'/ə swɔːm/', ru:'рой (пчёл)', ex:'A whole <b>swarm</b> of bees flies out.' }
+];
+
+const flashState = loadFlash();
+
+function renderFlashCards(){
+  const grid = document.getElementById('flash-grid');
+  grid.innerHTML = '';
+  FLASH_DATA.forEach((card, i) => {
+    const status = flashState[i];
+    const cardEl = document.createElement('div');
+    cardEl.className = 'flash-card' + (status === 'known' ? ' known' : status === 'unknown' ? ' unknown' : '');
+    cardEl.dataset.idx = i;
+    const inner = document.createElement('div');
+    inner.className = 'flash-card-inner';
+
+    const front = document.createElement('div');
+    front.className = 'flash-face flash-front';
+    front.innerHTML = `
+      <div class="flash-header">
+        <span class="f-emoji">${card.emoji}</span>
+        <button class="say-btn" data-say="${card.word}" title="Слушать">🔊</button>
+      </div>
+      <div class="f-word">${card.word}</div>
+      <div class="f-ipa">${card.ipa}</div>
+      <div class="f-hint">Нажми, чтобы перевернуть →</div>
+    `;
+
+    const back = document.createElement('div');
+    back.className = 'flash-face flash-back';
+    back.innerHTML = `
+      <div class="f-ru">${card.ru}</div>
+      <div class="f-ex">${card.ex}</div>
+      <div class="flash-actions">
+        <button class="flash-btn known ${status === 'known' ? 'selected' : ''}" data-status="known">✅ Знаю</button>
+        <button class="flash-btn unknown ${status === 'unknown' ? 'selected' : ''}" data-status="unknown">❌ Повторить</button>
+      </div>
+    `;
+
+    inner.appendChild(front);
+    inner.appendChild(back);
+    cardEl.appendChild(inner);
+    grid.appendChild(cardEl);
+
+    cardEl.addEventListener('click', (e) => {
+      if(e.target.closest('.say-btn') || e.target.closest('.flash-btn')) return;
+      cardEl.classList.toggle('flipped');
+    });
+
+    const sayBtn = front.querySelector('.say-btn');
+    sayBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      speak(card.word, sayBtn);
+    });
+
+    back.querySelectorAll('.flash-btn').forEach(b => {
+      b.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const st = b.dataset.status;
+        if(flashState[i] === st){ delete flashState[i]; }
+        else { flashState[i] = st; }
+        saveFlash(flashState);
+        renderFlashCards();
+        updateFlashSummary();
+      });
+    });
+  });
+  updateFlashSummary();
+}
+
+function updateFlashSummary(){
+  document.getElementById('total-cnt').textContent = FLASH_DATA.length;
+  let known = 0, unknown = 0;
+  for(const k in flashState){
+    if(flashState[k] === 'known') known++;
+    else if(flashState[k] === 'unknown') unknown++;
+  }
+  document.getElementById('known-cnt').textContent = known;
+  document.getElementById('unknown-cnt').textContent = unknown;
+}
+
+/* ============================================================
+   TRUE OR FALSE
+   ============================================================ */
+const TF_DATA = [
+  { q: 'The bear likes honey.', a: true, why: 'В начале истории сказано, что медведь обожает мёд.' },
+  { q: 'The bear has no honey at home.', a: true, why: 'Он открывает шкаф и видит, что мёда нет.' },
+  { q: 'The bee is big and strong.', a: false, why: 'Пчела маленькая, но смелая.' },
+  { q: "The bee bites the bear's nose.", a: true, why: 'Пчела жалит медведя прямо в нос.' },
+  { q: 'The bear is happy at the end.', a: false, why: 'Медведь плачет и считает укусы — ему не весело.' },
+  { q: 'The honey is at home, behind the flower.', a: true, why: 'Жена говорит, что мёд в шкафу, за цветком.' }
+];
+
+function renderTF(){
+  const box = document.getElementById('tf-container');
+  box.innerHTML = '';
+  TF_DATA.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'tf';
+    card.innerHTML = `
+      <div class="tfq">${i+1}. ${item.q}</div>
+      <button class="btn-true">True</button>
+      <button class="btn-false">False</button>
+      <div class="res"></div>
+    `;
+    box.appendChild(card);
+    const res = card.querySelector('.res');
+    card.querySelector('.btn-true').addEventListener('click', () => {
+      if(item.a === true){ res.className = 'res ok'; res.textContent = '✅ Правильно!'; }
+      else { res.className = 'res no'; res.textContent = '❌ Неверно. ' + item.why; }
+    });
+    card.querySelector('.btn-false').addEventListener('click', () => {
+      if(item.a === false){ res.className = 'res ok'; res.textContent = '✅ Правильно!'; }
+      else { res.className = 'res no'; res.textContent = '❌ Неверно. ' + item.why; }
+    });
+  });
+}
+
+/* ============================================================
+   ВОПРОСЫ
+   ============================================================ */
+const QUESTIONS_DATA = [
+  { q: 'What does the bear like?', hint: 'He likes…', sample: 'He likes honey.' },
+  { q: 'Where does the bear go?', hint: 'He goes to the…', sample: 'He goes to the forest.' },
+  { q: 'What is in the tree?', hint: 'There is a…', sample: 'There is a hive in the tree.' },
+  { q: 'Does the bear listen to the bee?', hint: 'No, he…', sample: "No, he doesn't." },
+  { q: 'What does the bee do?', hint: 'It bites…', sample: 'It bites his nose.' },
+  { q: 'Why is the bear angry?', hint: 'He is angry because…', sample: 'He is angry because the bee stings him.' },
+  { q: 'What does the bear break?', hint: 'He breaks the…', sample: 'He breaks the hive.' },
+  { q: 'Where is the honey at the end?', hint: 'It is in the cupboard…', sample: 'It is in the cupboard, behind the flower.' },
+  { q: 'What is the moral of the story?', hint: 'The story teaches us that…', sample: 'A hot temper always gets you into trouble.' }
+];
+
+function renderQuestions(){
+  const box = document.getElementById('questions-container');
+  box.innerHTML = '';
+  const answers = loadAnswers();
+  QUESTIONS_DATA.forEach((item, i) => {
+    const id = 'q-answer-' + i;
+    const saved = answers[id] ? answers[id].text : '';
+    const block = document.createElement('div');
+    block.className = 'q';
+    block.innerHTML = `
+      <div class="qt"><span class="qn">${i+1}</span> ${item.q}</div>
+      <p class="hintline">Подсказка: ${item.hint}</p>
+      <textarea class="answer-area" id="${id}" placeholder="Напиши полный ответ по-английски…">${saved}</textarea>
+      <div class="answer-controls">
+        <button class="btn-action" data-save="${id}">💾 Сохранить ответ</button>
+        <button class="reveal" data-reveal="${i}">Показать образец</button>
+        <button class="listen" data-listen="${i}">🔊 Слушать вопрос</button>
+        <span class="answer-saved-badge ${saved ? 'show' : ''}" id="badge-${id}">✅ Сохранено</span>
+      </div>
+      <div class="ans" id="ans-${i}"><span class="en">${item.sample}</span></div>
+    `;
+    box.appendChild(block);
+    block.querySelector(`[data-save="${id}"]`).addEventListener('click', () => saveAnswer(id));
+    block.querySelector(`[data-reveal="${i}"]`).addEventListener('click', (e) => {
+      const ans = document.getElementById('ans-' + i);
+      ans.classList.toggle('show');
+      e.target.textContent = ans.classList.contains('show') ? 'Скрыть образец' : 'Показать образец';
+    });
+    block.querySelector(`[data-listen="${i}"]`).addEventListener('click', (e) => speak(item.q, e.target));
+  });
+}
+
+/* ============================================================
+   BEE GAME
+   ============================================================ */
+const BODY_PARTS = [
+  { en:'head', ru:'голова' }, { en:'nose', ru:'нос' },
+  { en:'ear', ru:'ухо' }, { en:'arm', ru:'рука' },
+  { en:'leg', ru:'нога' }, { en:'hand', ru:'ладонь' },
+  { en:'eye', ru:'глаз' }, { en:'mouth', ru:'рот' }
+];
+
+const BEE_SVG = `<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+  <ellipse cx="22" cy="22" rx="12" ry="8" fill="#E8F4FF" opacity="0.85" transform="rotate(-30 22 22)"/>
+  <ellipse cx="38" cy="22" rx="12" ry="8" fill="#E8F4FF" opacity="0.85" transform="rotate(30 38 22)"/>
+  <ellipse cx="30" cy="35" rx="18" ry="12" fill="#F2C14E"/>
+  <ellipse cx="30" cy="35" rx="18" ry="12" fill="none" stroke="#C98A12" stroke-width="2"/>
+  <path d="M22 25 Q20 35 22 45" stroke="#3E2723" stroke-width="3" fill="none"/>
+  <path d="M38 25 Q40 35 38 45" stroke="#3E2723" stroke-width="3" fill="none"/>
+  <circle cx="22" cy="33" r="2.5" fill="#3E2723"/>
+  <circle cx="38" cy="33" r="2.5" fill="#3E2723"/>
+  <circle cx="22" cy="32.5" r="0.8" fill="#fff"/>
+  <circle cx="38" cy="32.5" r="0.8" fill="#fff"/>
+  <path d="M25 42 Q30 45 35 42" fill="none" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`;
+
+let beeGame = null;
+let beeTimer = null;
+let beeAnimFrame = null;
+
+function startBeeGame(){
+  const wrap = document.getElementById('bee-game');
+  const start = document.getElementById('bee-start');
+  const done = document.getElementById('bee-done');
+  const target = document.getElementById('bee-target');
+  const bear = document.getElementById('bear-sprite');
+
+  start.style.display = 'none';
+  done.style.display = 'none';
+  target.style.display = 'none';
+  bear.classList.remove('hit','dead');
+  bear.style.opacity = '1';
+  bear.style.filter = 'none';
+
+  wrap.querySelectorAll('.bee-body, .bee-feedback, .bee-flash').forEach(el => el.remove());
+
+  const flash = document.createElement('div');
+  flash.className = 'bee-flash';
+  wrap.appendChild(flash);
+
+  beeGame = {
+    score:0, caught:0, lives:3, total:10,
+    activeBee:null, currentTarget:null, usedParts:[], running:true
+  };
+
+  document.getElementById('bee-score').textContent = '0';
+  document.getElementById('bee-caught').textContent = '0';
+  document.getElementById('bee-lives').textContent = '3';
+
+  spawnBee();
+}
+
+function spawnBee(){
+  if(!beeGame || !beeGame.running) return;
+  if(beeGame.caught >= beeGame.total || beeGame.lives <= 0){ endBeeGame(); return; }
+
+  const wrap = document.getElementById('bee-game');
+  const target = document.getElementById('bee-target');
+
+  let part;
+  let attempts = 0;
+  do {
+    part = BODY_PARTS[Math.floor(Math.random() * BODY_PARTS.length)];
+    attempts++;
+  } while(beeGame.usedParts.includes(part.en) && attempts < 30);
+  beeGame.usedParts.push(part.en);
+  if(beeGame.usedParts.length > 4) beeGame.usedParts.shift();
+  beeGame.currentTarget = part;
+
+  target.style.display = 'block';
+  target.innerHTML = `<span class="en">${part.en}</span><span class="ru">${part.ru}</span>`;
+
+  const bee = document.createElement('div');
+  bee.className = 'bee-body';
+  bee.innerHTML = BEE_SVG;
+  bee.style.width = '70px';
+  bee.style.height = '70px';
+  const wx = wrap.clientWidth;
+  const wy = wrap.clientHeight;
+  bee.style.left = (wx - 70) / 2 + 'px';
+  bee.style.top = '70px';
+  wrap.appendChild(bee);
+  beeGame.activeBee = bee;
+
+  let x = (wx - 70) / 2;
+  let y = 70;
+  let vx = (Math.random() - 0.5) * 4;
+  let vy = (Math.random() - 0.5) * 4;
+  let alive = true;
+
+  function fly(){
+    if(!alive || !beeGame || !beeGame.running) return;
+    x += vx;
+    y += vy;
+    if(x <= 0 || x >= wx - 70) vx = -vx;
+    if(y <= 60 || y >= wy - 130) vy = -vy;
+    x = Math.max(0, Math.min(wx - 70, x));
+    y = Math.max(60, Math.min(wy - 130, y));
+    bee.style.left = x + 'px';
+    bee.style.top = y + 'px';
+    beeAnimFrame = requestAnimationFrame(fly);
+  }
+  fly();
+
+  bee.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if(!alive) return;
+    alive = false;
+    bee.classList.add('pop');
+    beeGame.caught++;
+    beeGame.score += 10;
+    document.getElementById('bee-score').textContent = beeGame.score;
+    document.getElementById('bee-caught').textContent = beeGame.caught;
+    showBeeFeedback('✅ ' + beeGame.currentTarget.en + ' — ' + beeGame.currentTarget.ru, '#5f9a3c', x, y);
+    document.getElementById('bee-target').style.display = 'none';
+    setTimeout(() => {
+      bee.remove();
+      if(beeGame.caught >= beeGame.total) endBeeGame();
+      else spawnBee();
+    }, 400);
+  });
+
+  const timeout = 2400 - Math.min(beeGame.caught * 130, 1100);
+  beeTimer = setTimeout(() => {
+    if(!alive) return;
+    alive = false;
+    beeGame.lives--;
+    document.getElementById('bee-lives').textContent = beeGame.lives;
+
+    const flash = wrap.querySelector('.bee-flash');
+    if(flash){ flash.classList.add('hit'); setTimeout(() => flash.classList.remove('hit'), 200); }
+
+    const bear = document.getElementById('bear-sprite');
+    bear.classList.add('hit');
+    setTimeout(() => bear.classList.remove('hit'), 400);
+
+    showBeeFeedback('❌ Укус! ' + beeGame.currentTarget.en + ' — ' + beeGame.currentTarget.ru, '#c94a2a', x, y);
+    document.getElementById('bee-target').style.display = 'none';
+    bee.classList.add('pop');
+
+    if(beeGame.lives <= 0){
+      bear.classList.add('dead');
+    }
+
+    setTimeout(() => {
+      bee.remove();
+      if(beeGame.lives <= 0) endBeeGame();
+      else spawnBee();
+    }, 400);
+  }, timeout);
+}
+
+function showBeeFeedback(text, color, x, y){
+  const wrap = document.getElementById('bee-game');
+  const fb = document.createElement('div');
+  fb.className = 'bee-feedback';
+  fb.textContent = text;
+  fb.style.color = color;
+  fb.style.left = Math.min(x, wrap.clientWidth - 220) + 'px';
+  fb.style.top = Math.max(y - 10, 50) + 'px';
+  fb.style.fontSize = '1rem';
+  wrap.appendChild(fb);
+  setTimeout(() => fb.remove(), 1100);
+}
+
+function endBeeGame(){
+  if(!beeGame) return;
+  beeGame.running = false;
+  if(beeTimer) clearTimeout(beeTimer);
+  if(beeAnimFrame) cancelAnimationFrame(beeAnimFrame);
+  const wrap = document.getElementById('bee-game');
+  wrap.querySelectorAll('.bee-body').forEach(el => el.remove());
+  document.getElementById('bee-target').style.display = 'none';
+
+  const done = document.getElementById('bee-done');
+  const title = document.getElementById('bee-done-title');
+  done.style.display = 'flex';
+  document.getElementById('bee-final-score').textContent = beeGame.score + ' очков';
+
+  let text = '', ttl = '';
+  if(beeGame.lives <= 0){
+    ttl = '💀 Медведя покусали!';
+    text = 'Три укуса — игра провалена. Попробуй ещё раз!';
+  } else if(beeGame.score >= 80){
+    ttl = '🌟 Отлично!';
+    text = 'Ты знаешь части тела на 5!';
+  } else if(beeGame.score >= 50){
+    ttl = '👍 Хорошо!';
+    text = 'Ещё немного практики — и будет отлично!';
+  } else {
+    ttl = '🙂 Неплохо!';
+    text = 'Повтори части тела и попробуй снова.';
+  }
+  title.textContent = ttl;
+  document.getElementById('bee-final-text').textContent = text;
+}
+
+/* ============================================================
+   STORY MAP
+   ============================================================ */
+const STORY_DATA = [
+  { step:1, title:'No honey', en:'The bear wants honey, but there is no honey at home.', ru:'Медведь хочет мёда, но дома мёда нет.', ill:'bear', say:'The bear wants honey, but there is no honey at home.', sayRu:'Медведь хочет мёда, но дома мёда нет.' },
+  { step:2, title:'In the forest', en:'He goes to the forest and sees a hive in the tree.', ru:'Он идёт в лес и видит улей на дереве.', ill:'tree', say:'He goes to the forest and sees a hive in the tree.', sayRu:'Он идёт в лес и видит улей на дереве.' },
+  { step:3, title:'The angry bee', en:'The bee says "Go away!" and bites his nose.', ru:'Пчела говорит: «Уходи!» — и жалит его в нос.', ill:'bee', say:'The bee says, go away, and bites his nose.', sayRu:'Пчела говорит: уходи, и жалит его в нос.' },
+  { step:4, title:'The swarm', en:'He breaks the hive. Many bees come out!', ru:'Он разбивает улей. Вылетает много пчёл!', ill:'swarm', say:'He breaks the hive. Many bees come out!', sayRu:'Он разбивает улей. Вылетает много пчёл!' },
+  { step:5, title:'At home', en:'His wife says: the honey is in the cupboard, behind the flower!', ru:'Его жена говорит: мёд в шкафу, за цветком!', ill:'home', say:'His wife says, the honey is in the cupboard, behind the flower.', sayRu:'Его жена говорит: мёд в шкафу, за цветком.' }
+];
+
+function renderStoryMap(){
+  const grid = document.getElementById('story-grid');
+  grid.innerHTML = '';
+  STORY_DATA.forEach((item) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'story-card-wrap';
+    const inner = document.createElement('div');
+    inner.className = 'story-card-inner';
+    const front = document.createElement('div');
+    front.className = 'story-face story-front';
+    front.innerHTML = `
+      ${comicIllustration(item.ill)}
+      <span class="step-num">${item.step}</span>
+      <b>${item.title}</b>
+      <span>${item.en}</span>
+      <div class="flip-hint">Нажми, чтобы увидеть перевод →</div>
+    `;
+    const back = document.createElement('div');
+    back.className = 'story-face story-back';
+    back.innerHTML = `
+      <div class="b-title">${item.title}</div>
+      <div class="b-ru">${item.ru}</div>
+      <div class="b-say">
+        <button data-say="${item.say}" data-lang="en">🔊 EN</button>
+        <button data-say="${item.sayRu}" data-lang="ru">🔊 RU</button>
+      </div>
+      <div class="b-back-hint">Нажми, чтобы вернуться ↺</div>
+    `;
+    inner.appendChild(front);
+    inner.appendChild(back);
+    wrap.appendChild(inner);
+    grid.appendChild(wrap);
+    wrap.addEventListener('click', (e) => {
+      if(e.target.closest('.b-say')) return;
+      wrap.classList.toggle('flipped');
+    });
+    back.querySelectorAll('.b-say button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        speakBtn(btn.dataset.say, btn, btn.dataset.lang || 'en');
+      });
+    });
+  });
+}
+
+/* ============================================================
+   КОМИКС — ПОЛНАЯ ИСТОРИЯ
+   ============================================================ */
+const FULL_STORY_SCENES = [
+  { ill:'bear', caption:'Once upon a time there was a bear who loved honey.', ru:'Жил-был медведь, который очень любил мёд.' },
+  { ill:'empty', caption:'One day he opened the cupboard — but there was no honey at home!', ru:'Однажды он открыл шкаф — а мёда дома нет!' },
+  { ill:'tree', caption:'He went to the forest to look for honey.', ru:'Он пошёл в лес искать мёд.' },
+  { ill:'hive', caption:'In a big tree he saw a hive full of sweet honey.', ru:'На большом дереве он увидел улей, полный сладкого мёда.' },
+  { ill:'bee', caption:'But a little bee said: "Go away! This is not your honey!"', ru:'Но маленькая пчела сказала: «Уходи! Это не твой мёд!»' },
+  { ill:'nose', caption:'The bear did not listen. The bee stung him right on the nose!', ru:'Медведь не послушал. Пчела ужалила его прямо в нос!' },
+  { ill:'angry', caption:'The bear got very angry and picked up a big stick.', ru:'Медведь очень рассердился и схватил большую палку.' },
+  { ill:'break', caption:'He broke the hive into pieces!', ru:'Он разбил улей на кусочки!' },
+  { ill:'swarm', caption:'A whole swarm of bees flew out and chased him!', ru:'Целый рой пчёл вылетел и погнался за ним!' },
+  { ill:'run', caption:'The bear ran home as fast as he could.', ru:'Медведь побежал домой со всех ног.' },
+  { ill:'home', caption:'His wife gave him medicine for the stings.', ru:'Жена дала ему лекарство от укусов.' },
+  { ill:'flower', caption:'She smiled: "The honey was in the cupboard, behind the flower!"', ru:'Она улыбнулась: «Мёд был в шкафу, за цветком!»' },
+  { ill:'moral', caption:'A hot temper always gets you into trouble. Stay calm!', ru:'Вспыльчивость всегда приводит к неприятностям. Будь спокоен!' }
+];
+
+function submitStory(){
+  const text = document.getElementById('my-story').value.trim();
+  if(!text){ alert('Сначала напиши свою историю!'); return; }
+
+  saveAnswer('my-story');
+
+  const userFrames = [];
+  const sentences = text.replace(/\n+/g,' ').split(/(?<=[.!?])\s+/).map(s=>s.trim()).filter(s=>s.length>3);
+  sentences.forEach(s => {
+    const rule = detectIllustration(s);
+    userFrames.push({
+      caption: s.length > 160 ? s.slice(0,160)+'…' : s,
+      ill: rule.ill
+    });
+  });
+
+  const userIlls = new Set(userFrames.map(f => f.ill));
+  const fullFrames = [...userFrames];
+
+  FULL_STORY_SCENES.forEach(scene => {
+    if(!userIlls.has(scene.ill)){
+      fullFrames.push({ caption: scene.caption, ill: scene.ill });
+      userIlls.add(scene.ill);
+    }
+  });
+
+  const final = fullFrames.slice(0, 15);
+
+  const strip = final.map((f,i) => `
+    <div class="comic-frame">
+      <div class="cf-num">${i+1}</div>
+      <div class="cf-ill">${comicIllustration(f.ill)}</div>
+      <div class="cf-caption">${escapeHtml(f.caption)}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('comic-container').innerHTML = `
+    <div class="comic-wrap">
+      <div class="comic-title">🎬 Твой комикс — вся история от начала до конца</div>
+      <div class="comic-strip">${strip}</div>
+    </div>
+  `;
+  showToast('🎬 Комикс готов!');
+  document.getElementById('comic-container').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+window.submitStory = submitStory;
+
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+          .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+const COMIC_RULES = [
+  { test:/\b(honey|sweet|eat|ate|tasty)\b/, ill:'honey' },
+  { test:/\b(no honey|not any honey|empty|nothing|no more honey|cupboard)\b/, ill:'empty' },
+  { test:/\b(home|house|door)\b/, ill:'home' },
+  { test:/\b(wife|mrs\.?|missus)\b/, ill:'wife' },
+  { test:/\b(forest|woods|walk|wander|goes to the forest|went to the forest)\b/, ill:'tree' },
+  { test:/\b(tree|trees)\b/, ill:'tree' },
+  { test:/\b(hive|beehive|nest)\b/, ill:'hive' },
+  { test:/\b(bee|bees|buzz|buzzing)\b/, ill:'bee' },
+  { test:/\b(sting|stings|stung|bite|bites|bit|nose)\b/, ill:'nose' },
+  { test:/\b(angry|furious|annoyed|mad|rage)\b/, ill:'angry' },
+  { test:/\b(stick|branch)\b/, ill:'stick' },
+  { test:/\b(break|breaks|broke|broken|smash|destroy|hit)\b/, ill:'break' },
+  { test:/\b(swarm|many bees|thousand|thousands|cloud of bees)\b/, ill:'swarm' },
+  { test:/\b(run|runs|ran|escape|run away|ran away|ran home)\b/, ill:'run' },
+  { test:/\b(medicine|cream|heal)\b/, ill:'medicine' },
+  { test:/\b(flower|flowers|behind the flower)\b/, ill:'flower' },
+  { test:/\b(cry|cries|crying|tears)\b/, ill:'cry' },
+  { test:/\b(moral|lesson|teaches|temper|calm|think first|stay calm)\b/, ill:'moral' }
+];
+
+function detectIllustration(text){
+  const lower = text.toLowerCase();
+  for(const rule of COMIC_RULES){
+    if(rule.test.test(lower)) return rule;
+  }
+  return { ill:'bear' };
+}
+
+/* ============================================================
+   SVG-ИЛЛЮСТРАЦИИ
+   ============================================================ */
+function comicIllustration(type){
+  const svgs = {
+    bear:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="28" fill="#A0522D"/><circle cx="30" cy="28" r="11" fill="#A0522D"/><circle cx="70" cy="28" r="11" fill="#A0522D"/><circle cx="30" cy="28" r="5" fill="#D2A679"/><circle cx="70" cy="28" r="5" fill="#D2A679"/><ellipse cx="50" cy="55" rx="14" ry="10" fill="#D2A679"/><ellipse cx="50" cy="51" rx="5" ry="4" fill="#3E2723"/><circle cx="41" cy="44" r="3.5" fill="#3E2723"/><circle cx="59" cy="44" r="3.5" fill="#3E2723"/><circle cx="42" cy="43" r="1" fill="#fff"/><circle cx="60" cy="43" r="1" fill="#fff"/><path d="M44 60 Q50 63 56 60" fill="none" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    empty:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="28" y="42" width="44" height="42" rx="6" fill="#F2C14E" stroke="#C98A12" stroke-width="2"/><ellipse cx="50" cy="42" rx="22" ry="7" fill="#FBF9F0"/><ellipse cx="50" cy="42" rx="22" ry="7" fill="none" stroke="#C98A12" stroke-width="1.5"/><text x="50" y="74" font-size="30" text-anchor="middle" font-weight="bold" fill="#6b4f2a" font-family="Arial">?</text><text x="50" y="30" font-size="14" text-anchor="middle" fill="#c94a2a" font-weight="bold" font-family="Arial">empty!</text></svg>`,
+    tree:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="45" y="55" width="10" height="40" fill="#7a5230"/><circle cx="50" cy="35" r="24" fill="#5e8a3a"/><circle cx="33" cy="42" r="16" fill="#6f9a44"/><circle cx="67" cy="42" r="16" fill="#6f9a44"/><circle cx="50" cy="18" r="14" fill="#7faa54"/><circle cx="38" cy="25" r="10" fill="#7faa54"/><circle cx="62" cy="25" r="10" fill="#7faa54"/></svg>`,
+    hive:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="46" y="62" width="8" height="33" fill="#7a5230"/><circle cx="50" cy="35" r="20" fill="#5e8a3a"/><circle cx="38" cy="42" r="12" fill="#6f9a44"/><circle cx="62" cy="42" r="12" fill="#6f9a44"/><ellipse cx="50" cy="62" rx="16" ry="20" fill="#F2C14E" stroke="#C98A12" stroke-width="2"/><path d="M36 56 Q50 52 64 56" stroke="#C98A12" stroke-width="1.5" fill="none"/><path d="M36 64 Q50 60 64 64" stroke="#C98A12" stroke-width="1.5" fill="none"/><path d="M36 72 Q50 68 64 72" stroke="#C98A12" stroke-width="1.5" fill="none"/><ellipse cx="50" cy="76" rx="5" ry="4" fill="#5a3a1a"/></svg>`,
+    bee:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="40" rx="14" ry="9" fill="#E8F4FF" opacity="0.85"/><ellipse cx="60" cy="40" rx="14" ry="9" fill="#E8F4FF" opacity="0.85"/><ellipse cx="50" cy="55" rx="20" ry="13" fill="#F2C14E" stroke="#C98A12" stroke-width="2"/><path d="M42 44 Q40 55 42 66" stroke="#3E2723" stroke-width="3" fill="none"/><path d="M58 44 Q60 55 58 66" stroke="#3E2723" stroke-width="3" fill="none"/><circle cx="40" cy="52" r="3" fill="#3E2723"/><circle cx="60" cy="52" r="3" fill="#3E2723"/><path d="M44 62 Q50 66 56 62" fill="none" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    nose:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="52" r="26" fill="#A0522D"/><circle cx="30" cy="30" r="10" fill="#A0522D"/><circle cx="70" cy="30" r="10" fill="#A0522D"/><ellipse cx="50" cy="58" rx="14" ry="10" fill="#D2A679"/><ellipse cx="50" cy="52" rx="5" ry="4" fill="#3E2723"/><circle cx="35" cy="45" r="3.5" fill="#3E2723"/><circle cx="65" cy="45" r="3.5" fill="#3E2723"/><circle cx="35" cy="45" r="3" fill="#E44"/><circle cx="65" cy="45" r="3" fill="#E44"/><text x="50" y="18" font-size="14" text-anchor="middle" fill="#c94a2a" font-weight="bold" font-family="Arial">*ouch!*</text></svg>`,
+    angry:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="28" fill="#A0522D"/><circle cx="30" cy="28" r="11" fill="#A0522D"/><circle cx="70" cy="28" r="11" fill="#A0522D"/><circle cx="30" cy="28" r="5" fill="#D2A679"/><circle cx="70" cy="28" r="5" fill="#D2A679"/><ellipse cx="50" cy="55" rx="14" ry="10" fill="#D2A679"/><ellipse cx="50" cy="51" rx="5" ry="4" fill="#3E2723"/><line x1="36" y1="36" x2="44" y2="40" stroke="#3E2723" stroke-width="2.5" stroke-linecap="round"/><line x1="64" y1="36" x2="56" y2="40" stroke="#3E2723" stroke-width="2.5" stroke-linecap="round"/><circle cx="41" cy="44" r="3" fill="#3E2723"/><circle cx="59" cy="44" r="3" fill="#3E2723"/><text x="50" y="16" font-size="20" text-anchor="middle" fill="#c94a2a" font-weight="bold" font-family="Arial">!</text></svg>`,
+    stick:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="60" r="18" fill="#A0522D"/><circle cx="28" cy="45" r="8" fill="#A0522D"/><circle cx="52" cy="45" r="8" fill="#A0522D"/><ellipse cx="40" cy="63" rx="9" ry="7" fill="#D2A679"/><ellipse cx="40" cy="60" rx="3" ry="2.5" fill="#3E2723"/><circle cx="33" cy="54" r="2" fill="#3E2723"/><circle cx="47" cy="54" r="2" fill="#3E2723"/><line x1="55" y1="50" x2="90" y2="20" stroke="#7a5230" stroke-width="6" stroke-linecap="round"/><line x1="80" y1="30" x2="85" y2="25" stroke="#5a3a1a" stroke-width="2" stroke-linecap="round"/></svg>`,
+    break:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><ellipse cx="30" cy="58" rx="14" ry="18" fill="#F2C14E" stroke="#C98A12" stroke-width="2"/><ellipse cx="68" cy="58" rx="14" ry="18" fill="#F2C14E" stroke="#C98A12" stroke-width="2"/><path d="M44 48 L52 54 L44 60 L52 68" stroke="#c94a2a" stroke-width="2.5" fill="none"/><path d="M60 48 L54 56 L60 64" stroke="#c94a2a" stroke-width="2.5" fill="none"/><text x="50" y="25" font-size="18" text-anchor="middle" fill="#c94a2a" font-weight="bold" font-family="Arial">SMASH!</text><circle cx="24" cy="35" r="3" fill="#E0A92E"/><circle cx="76" cy="35" r="3" fill="#E0A92E"/><circle cx="40" cy="28" r="2" fill="#E0A92E"/><circle cx="62" cy="28" r="2" fill="#E0A92E"/></svg>`,
+    swarm:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="translate(20,20) scale(0.5)"><ellipse cx="0" cy="0" rx="17" ry="11" fill="#F2C14E" stroke="#C98A12" stroke-width="1.5"/><path d="M-6 -10 Q-8 0 -6 10" stroke="#3E2723" stroke-width="3" fill="none"/><path d="M6 -10 Q8 0 6 10" stroke="#3E2723" stroke-width="3" fill="none"/></g><g transform="translate(80,25) scale(0.5)"><ellipse cx="0" cy="0" rx="17" ry="11" fill="#F2C14E" stroke="#C98A12" stroke-width="1.5"/><path d="M-6 -10 Q-8 0 -6 10" stroke="#3E2723" stroke-width="3" fill="none"/><path d="M6 -10 Q8 0 6 10" stroke="#3E2723" stroke-width="3" fill="none"/></g><g transform="translate(50,50) scale(0.65)"><ellipse cx="0" cy="0" rx="17" ry="11" fill="#F2C14E" stroke="#C98A12" stroke-width="1.5"/><path d="M-6 -10 Q-8 0 -6 10" stroke="#3E2723" stroke-width="3" fill="none"/><path d="M6 -10 Q8 0 6 10" stroke="#3E2723" stroke-width="3" fill="none"/></g><g transform="translate(25,78) scale(0.5)"><ellipse cx="0" cy="0" rx="17" ry="11" fill="#F2C14E" stroke="#C98A12" stroke-width="1.5"/><path d="M-6 -10 Q-8 0 -6 10" stroke="#3E2723" stroke-width="3" fill="none"/><path d="M6 -10 Q8 0 6 10" stroke="#3E2723" stroke-width="3" fill="none"/></g><g transform="translate(75,72) scale(0.5)"><ellipse cx="0" cy="0" rx="17" ry="11" fill="#F2C14E" stroke="#C98A12" stroke-width="1.5"/><path d="M-6 -10 Q-8 0 -6 10" stroke="#3E2723" stroke-width="3" fill="none"/><path d="M6 -10 Q8 0 6 10" stroke="#3E2723" stroke-width="3" fill="none"/></g></svg>`,
+    run:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="40" r="20" fill="#A0522D"/><circle cx="36" cy="26" r="8" fill="#A0522D"/><circle cx="64" cy="26" r="8" fill="#A0522D"/><ellipse cx="50" cy="43" rx="10" ry="8" fill="#D2A679"/><ellipse cx="50" cy="40" rx="4" ry="3" fill="#3E2723"/><circle cx="43" cy="34" r="2.5" fill="#3E2723"/><circle cx="57" cy="34" r="2.5" fill="#3E2723"/><path d="M40 58 L35 80 M60 58 L65 80" stroke="#A0522D" stroke-width="4" stroke-linecap="round"/><path d="M38 62 L28 68 M62 62 L72 68" stroke="#A0522D" stroke-width="4" stroke-linecap="round"/><path d="M25 30 L15 30 M25 38 L15 38 M25 46 L15 46" stroke="#889478" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="50" y="18" font-size="12" text-anchor="middle" fill="#c94a2a" font-weight="bold" font-family="Arial">zoom!</text></svg>`,
+    home:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="22" y="48" width="40" height="34" fill="#f5e6c8" stroke="#8a6240" stroke-width="1.5"/><path d="M16 48 L42 22 L68 48 Z" fill="#c94a2a"/><rect x="36" y="62" width="12" height="20" fill="#7a5230"/><rect x="48" y="54" width="9" height="9" fill="#a8d0e0"/><rect x="72" y="55" width="18" height="24" rx="3" fill="#E0A92E" stroke="#C98A12" stroke-width="1.5"/><ellipse cx="81" cy="55" rx="9" ry="3" fill="#F2C14E"/><text x="81" y="72" font-size="6" text-anchor="middle" font-weight="bold" fill="#6b4f2a" font-family="Arial">HONEY</text></svg>`,
+    wife:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="26" fill="#A0522D"/><circle cx="30" cy="30" r="9" fill="#A0522D"/><circle cx="70" cy="30" r="9" fill="#A0522D"/><circle cx="30" cy="30" r="4" fill="#D2A679"/><circle cx="70" cy="30" r="4" fill="#D2A679"/><ellipse cx="50" cy="55" rx="12" ry="9" fill="#D2A679"/><ellipse cx="50" cy="51" rx="4" ry="3" fill="#3E2723"/><circle cx="42" cy="44" r="3" fill="#3E2723"/><circle cx="58" cy="44" r="3" fill="#3E2723"/><path d="M44 62 Q50 66 56 62" fill="none" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/><path d="M30 80 Q50 90 70 80" stroke="#7a5230" stroke-width="2" fill="none"/></svg>`,
+    medicine:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="40" width="40" height="42" rx="6" fill="#e8f0fb" stroke="#4a7fc1" stroke-width="2"/><rect x="38" y="30" width="24" height="12" rx="2" fill="#4a7fc1"/><rect x="36" y="52" width="28" height="16" rx="3" fill="#fbf9f0" stroke="#4a7fc1" stroke-width="1"/><text x="50" y="63" font-size="8" text-anchor="middle" font-weight="bold" fill="#2c4a6e" font-family="Arial">MEDICINE</text></svg>`,
+    flower:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="10" fill="#ff9ec2"/><circle cx="36" cy="40" r="9" fill="#ff9ec2"/><circle cx="64" cy="40" r="9" fill="#ff9ec2"/><circle cx="40" cy="26" r="8" fill="#ff9ec2"/><circle cx="60" cy="26" r="8" fill="#ff9ec2"/><circle cx="50" cy="35" r="5" fill="#c98a12"/><line x1="50" y1="44" x2="50" y2="80" stroke="#4a7020" stroke-width="3"/><ellipse cx="42" cy="62" rx="7" ry="4" fill="#6f9a44" transform="rotate(-30 42 62)"/><ellipse cx="58" cy="70" rx="7" ry="4" fill="#6f9a44" transform="rotate(30 58 70)"/><rect x="62" y="60" width="14" height="18" rx="2" fill="#E0A92E" stroke="#C98A12" stroke-width="1.5"/></svg>`,
+    moral:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="#fff" stroke="#c98a12" stroke-width="3"/><circle cx="50" cy="50" r="26" fill="#F2C14E" opacity="0.35"/><text x="50" y="60" font-size="34" text-anchor="middle" font-weight="bold" fill="#c98a12" font-family="Arial">!</text><circle cx="50" cy="50" r="30" fill="none" stroke="#c98a12" stroke-width="1" stroke-dasharray="3 3"/></svg>`,
+    honey:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="28" y="40" width="44" height="42" rx="6" fill="#E0A92E" stroke="#C98A12" stroke-width="2"/><ellipse cx="50" cy="40" rx="22" ry="7" fill="#F2C14E"/><rect x="35" y="52" width="30" height="16" rx="3" fill="#fbf9f0"/><text x="50" y="64" font-size="8" text-anchor="middle" font-weight="bold" fill="#6b4f2a" font-family="Arial">HONEY</text><path d="M50 40 Q50 30 50 24" stroke="#C98A12" stroke-width="2" stroke-linecap="round"/><circle cx="50" cy="22" r="3" fill="#C98A12"/></svg>`,
+    cry:`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="26" fill="#A0522D"/><circle cx="30" cy="30" r="10" fill="#A0522D"/><circle cx="70" cy="30" r="10" fill="#A0522D"/><ellipse cx="50" cy="55" rx="14" ry="10" fill="#D2A679"/><ellipse cx="50" cy="51" rx="5" ry="4" fill="#3E2723"/><circle cx="40" cy="44" r="3.5" fill="#3E2723"/><circle cx="60" cy="44" r="3.5" fill="#3E2723"/><path d="M36 50 Q38 58 36 66" stroke="#4a9fd4" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M64 50 Q66 58 64 66" stroke="#4a9fd4" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M44 66 Q50 70 56 66" fill="none" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round"/></svg>`
+  };
+  return svgs[type] || svgs.bear;
+}
+
+/* ============================================================
+   TRY IT (Grammar)
+   ============================================================ */
+function tryAnswer(btn, word, isCorrect, why){
+  const block = btn.closest('.try-block');
+  const fb = block.querySelector('.try-feedback');
+  const parent = btn.parentElement;
+  [...parent.children].forEach(b => { b.disabled = true; b.classList.remove('ok','no'); });
+  if(isCorrect){
+    btn.classList.add('ok');
+    if(fb){ fb.className = 'try-feedback ok show'; fb.innerHTML = '✅ Правильно!'; }
+    speak(word, null);
+  } else {
+    btn.classList.add('no');
+    if(fb){ fb.className = 'try-feedback no show'; fb.innerHTML = '❌ Неверно. <b>' + why + '</b>'; }
+  }
+}
+window.tryAnswer = tryAnswer;
+
+function tryTF(btn, userAnswer){
+  const block = btn.closest('.try-block');
+  const correct = block.dataset.tf === 'true';
+  const fb = block.querySelector('.try-feedback');
+  const parent = btn.parentElement;
+  [...parent.children].forEach(b => b.disabled = true);
+  if(userAnswer === correct){
+    btn.classList.add('ok');
+    if(fb){ fb.className = 'try-feedback ok show'; fb.innerHTML = '✅ Правильно!'; }
+  } else {
+    btn.classList.add('no');
+    if(fb){
+      fb.className = 'try-feedback no show';
+      const why = correct ? 'Это утверждение верное.' : 'Это утверждение ложное.';
+      fb.innerHTML = '❌ Неверно. <b>' + why + '</b>';
+    }
+  }
+}
+window.tryTF = tryTF;
+
+/* ============================================================
+   ТАЙМЕРЫ
+   ============================================================ */
+const timers = {};
+function startTimer(gameId){
+  if(timers[gameId]) clearInterval(timers[gameId].id);
+  timers[gameId] = { start: Date.now(), sec: 0, running: true };
+  const el = document.getElementById('timer-' + gameId);
+  if(el){ el.classList.remove('finished'); el.textContent = '⏱ 00:00'; }
+  timers[gameId].id = setInterval(() => {
+    if(!timers[gameId] || !timers[gameId].running) return;
+    timers[gameId].sec = Math.floor((Date.now() - timers[gameId].start) / 1000);
+    const s = timers[gameId].sec;
+    const mm = String(Math.floor(s/60)).padStart(2,'0');
+    const ss = String(s%60).padStart(2,'0');
+    if(el) el.textContent = `⏱ ${mm}:${ss}`;
+  }, 1000);
+}
+function stopTimer(gameId){
+  if(timers[gameId]){ timers[gameId].running = false; clearInterval(timers[gameId].id); }
+  const el = document.getElementById('timer-' + gameId);
+  if(el) el.classList.add('finished');
+}
+function getTimerSeconds(gameId){ return timers[gameId] ? timers[gameId].sec : 0; }
+
+function updateBar(gameId, correct, total){
+  const bar = document.getElementById('bar-' + gameId);
+  if(!bar) return;
+  const pct = total ? Math.round(correct/total*100) : 0;
+  bar.style.width = pct + '%';
+  bar.textContent = `${correct} / ${total}`;
+  if(pct < 15) bar.style.color = 'transparent';
+  else bar.style.color = '#fff';
+}
+
+/* ============================================================
+   СОХРАНЕНИЕ РЕЗУЛЬТАТА + HISTORY
+   ============================================================ */
+const GAME_NAMES = {
+  game1: '🎯 Choose the right form',
+  game2: '🌍 Choose the translation',
+  game3: '✍️ Fill in the gap',
+  game4: '🃏 Memory pairs',
+  game5: '🧩 Build a sentence',
+  game6: '👂 Listening'
+};
+
+function saveGame(gameId){
+  const bar = document.getElementById('bar-' + gameId);
+  if(!bar){ alert('Игра не найдена'); return; }
+  const m = bar.textContent.match(/(\d+)\s*\/\s*(\d+)/);
+  if(!m){ alert('Сначала ответь хотя бы на один вопрос!'); return; }
+  const correct = +m[1], total = +m[2];
+  if(total === 0){ alert('Сначала ответь хотя бы на один вопрос!'); return; }
+
+  stopTimer(gameId);
+
+  const entry = {
+    game: gameId, gameName: GAME_NAMES[gameId],
+    correct, total, percent: Math.round(correct/total*100),
+    date: new Date().toISOString(),
+    timeSpent: getTimerSeconds(gameId)
+  };
+  const arr = loadResults();
+  arr.unshift(entry);
+  if(arr.length > 200) arr.length = 200;
+  const ok = saveResults(arr);
+  if(!ok) return;
+
+  renderHistory();
+  showToast('💾 Результат сохранён! Таймер остановлен.');
+
+  const historySection = document.getElementById('history-container');
+  if(historySection) historySection.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+window.saveGame = saveGame;
+
+function renderHistory(){
+  const box = document.getElementById('history-container');
+  if(!box){
+    console.warn('history-container не найден!');
+    return;
+  }
+  const arr = loadResults();
+  if(!arr.length){
+    box.innerHTML = '<div class="history-empty">Пока нет сохранённых результатов. Ответь на вопросы и нажми «💾 Сохранить и остановить».</div>';
+    return;
+  }
+
+  const byGame = {};
+  arr.forEach(e => {
+    if(!byGame[e.game]) byGame[e.game] = { best: 0, count: 0 };
+    byGame[e.game].count++;
+    if(e.percent > byGame[e.game].best) byGame[e.game].best = e.percent;
+  });
+
+  const totalGames = Object.keys(byGame).length;
+  const avgPercent = arr.length ? Math.round(arr.reduce((s,e) => s + e.percent, 0) / arr.length) : 0;
+
+  let html = `
+    <div class="history-summary">
+      <div class="hs-item"><span>Сохранено результатов</span><b>${arr.length}</b></div>
+      <div class="hs-item"><span>Игр сыграно</span><b>${totalGames} из 6</b></div>
+      <div class="hs-item"><span>Средний результат</span><b>${avgPercent}%</b></div>
+      <div style="flex:1;min-width:180px;">
+        <div style="font-size:.8rem;color:#5e6b46;margin-bottom:4px;">Общий прогресс</div>
+        <div class="history-progress"><div class="history-progress-fill" style="width:${avgPercent}%"></div></div>
+      </div>
+    </div>
+  `;
+
+  const list = document.createElement('div');
+  list.className = 'history-list';
+  arr.forEach(e => {
+    const d = new Date(e.date);
+    const cls = e.percent >= 80 ? '' : (e.percent >= 50 ? 'partial' : 'low');
+    const row = document.createElement('div');
+    row.className = 'history-item';
+    row.innerHTML = `
+      <div>
+        <div class="h-game">${e.gameName}</div>
+        <div class="h-date">📅 ${formatDate(d)} · ⏱ ${e.timeSpent || 0} с</div>
+      </div>
+      <div class="h-score ${cls}">${e.correct} / ${e.total} · ${e.percent}%</div>
+    `;
+    list.appendChild(row);
+  });
+
+  box.innerHTML = html;
+  box.appendChild(list);
+}
+
+function clearHistory(){
+  if(!confirm('Удалить всю историю результатов?')) return;
+  saveResults([]);
+  renderHistory();
+  showToast('История очищена');
+}
+window.clearHistory = clearHistory;
+
+/* ============================================================
+   ИГРА 1: CHOOSE THE RIGHT FORM
+   ============================================================ */
+const QUIZ_DATA = [
+  { q:'She ___ honey.', opts:['like','likes'], a:'likes', why:'После she нужна форма likes.' },
+  { q:'I ___ honey.', opts:['like','likes'], a:'like', why:'После I нужна форма like без -s.' },
+  { q:'He ___ a big nose.', opts:['have','has'], a:'has', why:'После he нужна форма has.' },
+  { q:'They ___ a hive.', opts:['have','has'], a:'have', why:'После they нужна форма have.' },
+  { q:'It ___ flowers.', opts:['like','likes'], a:'likes', why:'It — единственное число, нужна форма likes.' },
+  { q:'We ___ a stick.', opts:['have','has'], a:'have', why:'После we нужна форма have.' },
+  { q:'The bear ___ honey.', opts:['like','likes'], a:'likes', why:'The bear = it, нужна форма likes.' },
+  { q:'You ___ a honey jar.', opts:['have','has'], a:'have', why:'После you нужна форма have.' }
+];
+let quizState = { answers:{}, order:[] };
+
+function restartQuiz(){
+  quizState = { answers:{}, order:[] };
+  QUIZ_DATA.forEach((_,i) => quizState.order.push(i));
+  quizState.order.sort(() => Math.random() - 0.5);
+  renderQuiz();
+  updateBar('game1', 0, QUIZ_DATA.length);
+  startTimer('game1');
+}
+window.restartQuiz = restartQuiz;
+
+function renderQuiz(){
+  const box = document.getElementById('quiz-container');
+  box.innerHTML = '';
+  quizState.order.forEach((idx, pos) => {
+    const item = QUIZ_DATA[idx];
+    const row = document.createElement('div');
+    row.className = 'quiz-row';
+    row.innerHTML = `<div class="quiz-q">${pos+1}. ${item.q.replace('___','<b style="color:#c98a12">___</b>')}</div>`;
+    const opts = document.createElement('div');
+    opts.className = 'quiz-opts';
+    item.opts.forEach(opt => {
+      const b = document.createElement('button');
+      b.textContent = opt;
+      b.dataset.opt = opt;
+      b.addEventListener('click', () => answerQuiz(idx, opt, b, row));
+      opts.appendChild(b);
+    });
+    const fb = document.createElement('div');
+    fb.className = 'quiz-feedback';
+    row.appendChild(opts);
+    row.appendChild(fb);
+    box.appendChild(row);
+  });
+}
+
+function answerQuiz(idx, opt, btn, row){
+  if(quizState.answers[idx] !== undefined) return;
+  const correct = QUIZ_DATA[idx].a;
+  quizState.answers[idx] = (opt === correct);
+  const parent = btn.parentElement;
+  [...parent.children].forEach(b => {
+    if(b.dataset.opt === correct) b.classList.add('correct');
+    else if(b === btn) b.classList.add('wrong');
+    b.disabled = true;
+  });
+  const fb = row.querySelector('.quiz-feedback');
+  if(opt === correct){ fb.className = 'quiz-feedback ok show'; fb.innerHTML = '✅ Правильно!'; }
+  else { fb.className = 'quiz-feedback no show'; fb.innerHTML = '❌ Неверно. <b>' + QUIZ_DATA[idx].why + '</b>'; }
+  let right = 0;
+  for(const k in quizState.answers) if(quizState.answers[k]) right++;
+  updateBar('game1', right, QUIZ_DATA.length);
+}
+
+/* ============================================================
+   ИГРА 2: CHOOSE THE TRANSLATION
+   ============================================================ */
+const TRANS_DATA = [
+  { word:'honey', opts:['мёд','улей','пчела'], a:'мёд', why:'Honey — это мёд. Улей — hive, пчела — bee.' },
+  { word:'a bear', opts:['медведь','пчела','лес'], a:'медведь', why:'A bear — медведь. Пчела — bee, лес — forest.' },
+  { word:'a hive', opts:['улей','мёд','цветок'], a:'улей', why:'A hive — улей. Мёд — honey, цветок — flower.' },
+  { word:'furious', opts:['взбешённый','спокойный','маленький'], a:'взбешённый', why:'Furious — взбешённый. Спокойный — calm.' },
+  { word:'a stick', opts:['палка','нос','дом'], a:'палка', why:'A stick — палка. Нос — nose, дом — house.' },
+  { word:'a swarm', opts:['рой','цветок','лекарство'], a:'рой', why:'A swarm — рой. Цветок — flower, лекарство — medicine.' },
+  { word:'to escape', opts:['убегать','плакать','ломать'], a:'убегать', why:'To escape — убегать. Плакать — to cry, ломать — to break.' },
+  { word:'medicine', opts:['лекарство','шкаф','жена'], a:'лекарство', why:'Medicine — лекарство. Шкаф — cupboard, жена — wife.' }
+];
+let transState = { answers:{}, order:[] };
+
+function restartTrans(){
+  transState = { answers:{}, order:[] };
+  TRANS_DATA.forEach((_,i) => transState.order.push(i));
+  transState.order.sort(() => Math.random() - 0.5);
+  renderTrans();
+  updateBar('game2', 0, TRANS_DATA.length);
+  startTimer('game2');
+}
+window.restartTrans = restartTrans;
+
+function renderTrans(){
+  const box = document.getElementById('trans-container');
+  box.innerHTML = '';
+  transState.order.forEach((idx, pos) => {
+    const item = TRANS_DATA[idx];
+    const row = document.createElement('div');
+    row.className = 'quiz-row';
+    row.innerHTML = `<div class="quiz-q">${pos+1}. <b>${item.word}</b> — это…</div>`;
+    const opts = document.createElement('div');
+    opts.className = 'quiz-opts';
+    item.opts.forEach(opt => {
+      const b = document.createElement('button');
+      b.textContent = opt;
+      b.dataset.opt = opt;
+      b.addEventListener('click', () => answerTrans(idx, opt, b, row));
+      opts.appendChild(b);
+    });
+    const fb = document.createElement('div');
+    fb.className = 'quiz-feedback';
+    row.appendChild(opts);
+    row.appendChild(fb);
+    box.appendChild(row);
+  });
+}
+
+function answerTrans(idx, opt, btn, row){
+  if(transState.answers[idx] !== undefined) return;
+  const correct = TRANS_DATA[idx].a;
+  transState.answers[idx] = (opt === correct);
+  const parent = btn.parentElement;
+  [...parent.children].forEach(b => {
+    if(b.dataset.opt === correct) b.classList.add('correct');
+    else if(b === btn) b.classList.add('wrong');
+    b.disabled = true;
+  });
+  const fb = row.querySelector('.quiz-feedback');
+  if(opt === correct){ fb.className = 'quiz-feedback ok show'; fb.innerHTML = '✅ Правильно!'; speak(TRANS_DATA[idx].word, null); }
+  else { fb.className = 'quiz-feedback no show'; fb.innerHTML = '❌ Неверно. <b>' + TRANS_DATA[idx].why + '</b>'; }
+  let right = 0;
+  for(const k in transState.answers) if(transState.answers[k]) right++;
+  updateBar('game2', right, TRANS_DATA.length);
+}
+
+/* ============================================================
+   ИГРА 3: FILL IN THE GAP (7 вопросов, гибкие ответы)
+   ============================================================ */
+const FILL_DATA = [
+  { before:'She', after:'honey.', answer:['likes'], ru:'любит', why:'После she нужна форма likes.' },
+  { before:'I', after:'a stick.', answer:['have'], ru:'имею', why:'После I нужна форма have.' },
+  { before:'He', after:'a big nose.', answer:['has'], ru:'имеет', why:'После he нужна форма has.' },
+  // ← 4-й вопрос удалён (был "They ___ bees.")
+  { before:'It', after:'flowers.', answer:['likes'], ru:'любит', why:'После it нужна форма likes.' },
+  { before:'We', after:'honey at home.', answer:['have'], ru:'имеем', why:'После we нужна форма have.' },
+  { before:'The bear', after:'the bee.', answer:["doesn't like", "does not like", "doesn’t like"], ru:'не любит', why:'The bear = it, отрицание — doesn\'t like (или does not like).' },
+  { before:'She', after:'a hive.', answer:['has'], ru:'имеет', why:'После she нужна форма has.' }
+];
+let fillState = { answers:{} };
+
+function normalize(s){
+  return String(s).trim().toLowerCase()
+    .replace(/[’‘`]/g, "'")
+    .replace(/\s+/g, ' ')
+    .replace(/\.$/, '');
+}
+
+function isFillCorrect(user, answers){
+  const u = normalize(user);
+  return answers.some(a => normalize(a) === u);
+}
+
+function restartFill(){
+  fillState = { answers:{} };
+  const box = document.getElementById('fill-container');
+  if(!box) return;
+  box.innerHTML = '';
+  FILL_DATA.forEach((item, i) => {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = `<div class="fill-ru-hint">Вставь по-английски: <b>${item.ru}</b></div>`;
+    const row = document.createElement('div');
+    row.className = 'fill-row';
+    row.innerHTML = `
+      <span>${i+1}. ${item.before}</span>
+      <input type="text" id="fill-${i}" placeholder="?" autocomplete="off">
+      <span>${item.after}</span>
+      <span class="mark" id="mark-${i}"></span>
+    `;
+    const fb = document.createElement('div');
+    fb.className = 'fill-feedback';
+    fb.id = 'fill-fb-' + i;
+    wrap.appendChild(row);
+    wrap.appendChild(fb);
+    box.appendChild(wrap);
+    row.querySelector('input').addEventListener('keydown', e => { if(e.key === 'Enter') checkFill(i); });
+  });
+  updateBar('game3', 0, FILL_DATA.length);
+  startTimer('game3');
+}
+window.restartFill = restartFill;
+
+function checkFill(i){
+  const inp = document.getElementById('fill-' + i);
+  const mark = document.getElementById('mark-' + i);
+  const fb = document.getElementById('fill-fb-' + i);
+  if(!inp) return;
+  const ok = isFillCorrect(inp.value, FILL_DATA[i].answer);
+  if(ok){
+    inp.classList.add('correct'); inp.classList.remove('wrong');
+    mark.textContent = '✅'; mark.className = 'mark ok';
+    fb.className = 'fill-feedback ok';
+    fb.textContent = '✅ Правильно!';
+    fillState.answers[i] = true;
+  } else {
+    inp.classList.add('wrong'); inp.classList.remove('correct');
+    mark.textContent = '❌'; mark.className = 'mark no';
+    fb.className = 'fill-feedback no';
+    fb.innerHTML = '❌ Неверно. <b>' + FILL_DATA[i].why + '</b>';
+    fillState.answers[i] = false;
+  }
+  let right = 0;
+  for(const k in fillState.answers) if(fillState.answers[k]) right++;
+  updateBar('game3', right, FILL_DATA.length);
+}
+window.checkFill = checkFill;
+
+function checkAllFills(){
+  FILL_DATA.forEach((_, i) => {
+    const el = document.getElementById('fill-' + i);
+    if(!el) return;
+    if(!el.classList.contains('correct') && !el.classList.contains('wrong')) checkFill(i);
+  });
+}
+window.checkAllFills = checkAllFills;
+
+/* ============================================================
+   ИГРА 4: MEMORY (слово + перевод)
+   ============================================================ */
+const MEMORY_PAIRS = [
+  { en:'honey', ru:'мёд' }, { en:'a bear', ru:'медведь' },
+  { en:'a bee', ru:'пчела' }, { en:'a hive', ru:'улей' },
+  { en:'a forest', ru:'лес' }, { en:'a nose', ru:'нос' },
+  { en:'a stick', ru:'палка' }, { en:'medicine', ru:'лекарство' },
+  { en:'furious', ru:'взбешённый' }, { en:'a swarm', ru:'рой' },
+  { en:'to escape', ru:'убегать' }, { en:'a temper', ru:'вспыльчивость' }
+];
+let memoryState = { first:null, second:null, matched:0, total:MEMORY_PAIRS.length, lock:false, tiles:[] };
+
+function restartMemory(){
+  memoryState = { first:null, second:null, matched:0, total:MEMORY_PAIRS.length, lock:false, tiles:[] };
+  const grid = document.getElementById('memory-grid');
+  grid.innerHTML = '';
+  const tiles = [];
+  MEMORY_PAIRS.forEach((p, i) => {
+    tiles.push({ id:i, type:'en', text:p.en });
+    tiles.push({ id:i, type:'ru', text:p.ru });
+  });
+  tiles.sort(() => Math.random() - 0.5);
+  memoryState.tiles = tiles;
+  tiles.forEach((t, idx) => {
+    const b = document.createElement('button');
+    b.className = 'memory-tile';
+    b.dataset.idx = idx;
+    b.textContent = '?';
+    b.addEventListener('click', () => flipMemory(idx, b));
+    grid.appendChild(b);
+  });
+  updateBar('game4', 0, MEMORY_PAIRS.length);
+  startTimer('game4');
+}
+window.restartMemory = restartMemory;
+
+function flipMemory(idx, btn){
+  if(memoryState.lock) return;
+  if(btn.classList.contains('flipped') || btn.classList.contains('matched') || btn.classList.contains('matched-ru')) return;
+  const t = memoryState.tiles[idx];
+  btn.classList.add('flipped');
+  btn.textContent = t.text;
+  if(!memoryState.first){ memoryState.first = { idx, btn, pair:t.id, type:t.type }; return; }
+  memoryState.second = { idx, btn, pair:t.id, type:t.type };
+  memoryState.lock = true;
+  const f = memoryState.first, s = memoryState.second;
+  if(f.pair === s.pair && f.type !== s.type){
+    setTimeout(() => {
+      f.btn.classList.remove('flipped');
+      s.btn.classList.remove('flipped');
+      if(f.type === 'en'){ f.btn.classList.add('matched'); s.btn.classList.add('matched-ru'); }
+      else { f.btn.classList.add('matched-ru'); s.btn.classList.add('matched'); }
+      memoryState.matched++;
+      updateBar('game4', memoryState.matched, MEMORY_PAIRS.length);
+      memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+    }, 400);
+  } else {
+    setTimeout(() => {
+      f.btn.classList.remove('flipped'); f.btn.textContent = '?';
+      s.btn.classList.remove('flipped'); s.btn.textContent = '?';
+      memoryState.first = null; memoryState.second = null; memoryState.lock = false;
+    }, 900);
+  }
+}
+
+/* ============================================================
+   ИГРА 5: BUILD A SENTENCE
+   ============================================================ */
+const BUILD_DATA = [
+  { words:['She','likes','honey'], hint:'Она любит мёд.' },
+  { words:['He','has','a','stick'], hint:'У него есть палка.' },
+  { words:['They','have','a','hive'], hint:'У них есть улей.' },
+  { words:['The','bear','likes','honey'], hint:'Медведь любит мёд.' },
+  { words:['It','has','a','nose'], hint:'У него есть нос.' },
+  { words:['I','have','honey'], hint:'У меня есть мёд.' },
+  { words:['She',"doesn't",'like','bees'], hint:'Она не любит пчёл.' }
+];
+let buildState = { answers:{}, correct:0, total:BUILD_DATA.length };
+
+function restartBuild(){
+  buildState = { answers:{}, correct:0, total:BUILD_DATA.length };
+  renderBuild();
+  updateBar('game5', 0, BUILD_DATA.length);
+  startTimer('game5');
+}
+window.restartBuild = restartBuild;
+
+function renderBuild(){
+  const box = document.getElementById('build-container');
+  box.innerHTML = '';
+  BUILD_DATA.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'build-row';
+    row.innerHTML = `<div class="build-target">${i+1}. ${item.hint}</div>`;
+    const words = document.createElement('div');
+    words.className = 'build-words';
+    const shuffled = [...item.words].sort(() => Math.random() - 0.5);
+    shuffled.forEach(w => {
+      const b = document.createElement('button');
+      b.textContent = w;
+      b.addEventListener('click', () => addWord(i, w, b));
+      words.appendChild(b);
+    });
+    const ans = document.createElement('div');
+    ans.className = 'build-answer';
+    ans.id = 'build-ans-' + i;
+    const res = document.createElement('div');
+    res.className = 'build-result';
+    res.id = 'build-res-' + i;
+    row.appendChild(words);
+    row.appendChild(ans);
+    row.appendChild(res);
+    box.appendChild(row);
+  });
+}
+
+function addWord(i, word, btn){
+  const ans = document.getElementById('build-ans-' + i);
+  const res = document.getElementById('build-res-' + i);
+  if(res.textContent === '✅ Правильно!') return;
+  const span = document.createElement('span');
+  span.textContent = word;
+  ans.appendChild(span);
+  btn.classList.add('used');
+  const built = [...ans.children].map(c => c.textContent).join(' ');
+  const target = BUILD_DATA[i].words.join(' ');
+  if(built === target){
+    res.textContent = '✅ Правильно!';
+    res.className = 'build-result ok';
+    if(!buildState.answers[i]){
+      buildState.answers[i] = true;
+      buildState.correct++;
+      updateBar('game5', buildState.correct, BUILD_DATA.length);
+    }
+    [...ans.querySelectorAll('span')].forEach(s => s.style.background = '#c8e8b8');
+  } else if(built.length >= target.length - 2 && !target.startsWith(built)){
+    res.textContent = '❌ Проверь порядок слов.';
+    res.className = 'build-result no';
+  }
+}
+
+/* ============================================================
+   ИГРА 6: LISTENING
+   ============================================================ */
+const LISTEN_DATA = [
+  { sentence:'She likes honey.', opts:['She likes honey.','She like honey.'], a:'She likes honey.', why:'После she нужна форма likes.' },
+  { sentence:'He has a stick.', opts:['He have a stick.','He has a stick.'], a:'He has a stick.', why:'После he нужна форма has.' },
+  { sentence:'They have a hive.', opts:['They have a hive.','They has a hive.'], a:'They have a hive.', why:'После they нужна форма have.' },
+  { sentence:'I like honey.', opts:['I like honey.','I likes honey.'], a:'I like honey.', why:'После I нужна форма like без -s.' },
+  { sentence:'The bear has a nose.', opts:['The bear has a nose.','The bear have a nose.'], a:'The bear has a nose.', why:'The bear = it, нужна форма has.' },
+  { sentence:"She doesn't like bees.", opts:["She doesn't like bees.","She don't like bees."], a:"She doesn't like bees.", why:'После she — doesn\'t, а не don\'t.' }
+];
+let listenState = { answers:{}, order:[] };
+
+function restartListen(){
+  listenState = { answers:{}, order:[] };
+  LISTEN_DATA.forEach((_,i) => listenState.order.push(i));
+  listenState.order.sort(() => Math.random() - 0.5);
+  renderListen();
+  updateBar('game6', 0, LISTEN_DATA.length);
+  startTimer('game6');
+}
+window.restartListen = restartListen;
+
+function renderListen(){
+  const box = document.getElementById('listen-container');
+  box.innerHTML = '';
+  listenState.order.forEach((idx, pos) => {
+    const item = LISTEN_DATA[idx];
+    const row = document.createElement('div');
+    row.className = 'quiz-row';
+    row.innerHTML = `<div class="quiz-q">${pos+1}. <button class="btn-action ghost" data-play="${idx}" style="padding:4px 12px;font-size:.8rem;">🔊 Слушать</button></div>`;
+    const opts = document.createElement('div');
+    opts.className = 'quiz-opts';
+    item.opts.forEach(opt => {
+      const b = document.createElement('button');
+      b.textContent = opt;
+      b.dataset.opt = opt;
+      b.addEventListener('click', () => answerListen(idx, opt, b, row));
+      opts.appendChild(b);
+    });
+    const fb = document.createElement('div');
+    fb.className = 'quiz-feedback';
+    row.appendChild(opts);
+    row.appendChild(fb);
+    box.appendChild(row);
+    row.querySelector('[data-play]').addEventListener('click', () => speak(item.sentence, null));
+  });
+}
+
+function answerListen(idx, opt, btn, row){
+  if(listenState.answers[idx] !== undefined) return;
+  const correct = LISTEN_DATA[idx].a;
+  listenState.answers[idx] = (opt === correct);
+  const parent = btn.parentElement;
+  [...parent.children].forEach(b => {
+    if(b.dataset.opt === correct) b.classList.add('correct');
+    else if(b === btn) b.classList.add('wrong');
+    b.disabled = true;
+  });
+  const fb = row.querySelector('.quiz-feedback');
+  if(opt === correct){ fb.className = 'quiz-feedback ok show'; fb.innerHTML = '✅ Правильно!'; }
+  else { fb.className = 'quiz-feedback no show'; fb.innerHTML = '❌ Неверно. <b>' + LISTEN_DATA[idx].why + '</b>'; }
+  let right = 0;
+  for(const k in listenState.answers) if(listenState.answers[k]) right++;
+  updateBar('game6', right, LISTEN_DATA.length);
+}
+
+/* ============================================================
+   ИНИЦИАЛИЗАЦИЯ
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  loadAllSavedAnswers();
+  renderFlashCards();
+  renderTF();
+  renderQuestions();
+  renderStoryMap();
+  restartQuiz();
+  restartTrans();
+  restartFill();
+  restartMemory();
+  restartBuild();
+  restartListen();
+  renderHistory();
+});
+
+window.addEventListener('beforeunload', () => {
+  if(synth) synth.cancel();
+  if(beeTimer) clearTimeout(beeTimer);
+  if(beeAnimFrame) cancelAnimationFrame(beeAnimFrame);
+  if(beeGame) beeGame.running = false;
+});
+</script>
+
+</body>
+</html>
